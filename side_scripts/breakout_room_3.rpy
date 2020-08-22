@@ -8,7 +8,7 @@ label breakout_room_3:
           call HopefullyOtherGuyJoins
           pass
        "Yeah, I guess. Do you have any ideas for the project?":
-          call ProjectIdeas"
+          call ProjectIdeas:
           pass
        
        if Jessica_angry
@@ -217,7 +217,7 @@ label breakout_room_3:
        call JessGone
        return
      
-     label Mask"
+     label Mask:
        Jessica "Yeah! I actually make them myself, let me show you some of my designs."
        Jessica "If there’s any you like, check out my website! I’ll hook you guys up with a discount too."
        "{i}Jessica disappears but quickly returns to her seat, now wearing a mask.{/i}"                         # JESSICA NEEDS A MASK HERE
