@@ -57,8 +57,8 @@ label breakout_room_2:
     menu: 
         "Yeah for sure!":
             Nine “Nice! Looking forward to it!”
-            $ num_team_members++
-            
+            $ num_team_members += 1
+            $ nine_join_team = True
             "(Shouko leaves the meeting)"                 # E N D     - TEAM MATE ACQUIRED - NINE
             "{i}You have acquired a team member"
             jump end
@@ -72,15 +72,43 @@ label breakout_room_2:
     
     if shouko_message:
         call shouko_final_moments
-    else: 
-        jump end                                      # E N D ------ 
+        
+    jump end                                      # E N D ------ 
            
     return
 
 label end:
     if num_team_members < 2:
-        #???????
-        
+        if not nine_join_team:
+            menu:
+                "Will you invite Nine-One to join your team?"
+                "Yes":
+                    if nines_angry:
+                        "Nine declined your invitation."
+                    else:
+                        $ num_team_members += 1
+                        $ nine_join_team = True
+                        "Nine accepted your invitation."
+                        "Successfully acquired a new teammate!"
+                    pass
+                "No":
+                    pass
+    if num_team_members < 2:            
+        if not shouko_join_team:
+            menu:  
+                "Will you invite Shouko to join your team?"
+                "Yes":
+                    if shouko_angry:
+                        "Shouko declined your invitation"
+                    else:
+                        $ num_team_members += 1
+                        $ shouko_join_team = True
+                        "Shouko accepted your invitation"
+                        "Successfully acquired a new teammate!"
+                    pass
+                "No":
+                    pass
+                
     return
 
 label MissMute:
