@@ -19,7 +19,7 @@ label breakout_room_2:
     Nine “I was just saying how anyone fortunate enough to be on my team would absolutely ace this subject." 
     
     if shouko_message:
-        centered "{i}You receive a friend request from \"Shouko Oogushi\"."
+        centered "{i}You receive a friend request from \"Shouko Oogushi\""
         menu:
             "Accept friend request":
                 pass
@@ -27,7 +27,7 @@ label breakout_room_2:
                 $ shouko_message = False
                 pass
                 
-    Nine “Not to brag or anything but I’m 190% sure I’m the smartest person in this tute."
+    Nine “Not to brag or anything but I’m 190\% sure I’m the smartest person in this tute."
     Nine "No offence to you or anything," 
     Nine "but you probably won’t do that well just by yourself haha.”
     
@@ -118,7 +118,7 @@ label end:
 label MissMute:
     Nine “Yeah that’s my nickname for her."
     Nine "Fitting don’t you think? She hasn’t said a word since I joined lmao”
-    Shouko “{i}She looks as if to speak but decides against it.{/i}”
+   “{i}Shouko looks as if to speak but decides against it.{/i}”
     menu: 
         "Prompt her to speak.”:
             call PromptSpeak
@@ -133,12 +133,12 @@ label PromptSpeak:
     Shouko “I… uh… {size=-10}My name is...{/size} {size=-15}Shouko{/size}.”
     menu: 
         "I see that you like anime?":
-            Shouko "{i}She blushes but remains silent."
+            "{i}Shouko blushes but remains silent."
             $ shouko_message = True
             pass
         "Sorry, could you speak up?":
             Shouko "..."
-            Shouko "{i}She seems hurt by your comment."
+            "{i}Shouko seems hurt by your comment."
             pass    
         "What were you guys talking about before?":
             Nine "Oh you know..."
@@ -149,7 +149,7 @@ label PromptSpeak:
 
 label shouko_message1:
     centered "{i}You have (1) new messages"
-    centered "Shouko: Thanks for talking to me! That really made me feel appreciated > <"
+    centered "Shouko: Thanks for talking to me! That really made me feel appreciated (> <)"
     menu:
         "No worries at all!":
             pass
@@ -161,7 +161,7 @@ label shouko_message1:
     
 label shouko_message2:
     centered "{i}You have (1) new messages"
-    centered "Shouko: I really don’t think you should choose Nine as a teammate… > <;"
+    centered "Shouko: I really don’t think you should choose Nine as a teammate… (> <;)"
     menu:
         "I agree.. He seems a bit dodgy":
             pass
@@ -198,7 +198,7 @@ label Idontknow:
     return
         
 label nine_be_angry:
-    $ nine_angry = TRUE
+    $ nine_angry = True
     Nine “{cps=*3}What the fuck did you just fucking say about me, you little bitch? I’ll have you know I graduated top of my class in the Navy Seals, and I’ve been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I’m the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fuckin-{/cps}”
     "(Nine leaves the room)"                              # NINE LEAVES
     return
@@ -216,7 +216,7 @@ label shouko_final_moments:
             Shouko "Am I not supposed to be?"
             Shouko "..."
             "(Shouko leaves the call)"                   # E N D --- SHOUKO LEAVES
-            $ shouko_angry = TRUE
+            $ shouko_angry = True
             return
             pass
     
@@ -260,7 +260,7 @@ label shouko_final_moments:
     
     Shouko “It was nice talking to you!”
                                                                         # SHOUKO BLUSHES
-    Shouko “Hopefully I’ll get to talk to you again! > <”
+    Shouko “Hopefully I’ll get to talk to you again! (> <)”
     
     menu:
         “Hope to talk again soon too!”:
