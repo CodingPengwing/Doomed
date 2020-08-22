@@ -64,7 +64,7 @@ label breakout_room_2:
             $ Nine_joined_team = True
             "(Shouko leaves the meeting)"                 # E N D     - TEAM MATE ACQUIRED - NINE
             "{i}You have acquired a team member"
-            jump end
+            jump b2_end
             pass
         "I don't know...":
             call Idontknow
@@ -76,7 +76,7 @@ label breakout_room_2:
     if shouko_message:
         call shouko_final_moments
 
-    jump end                                      # E N D ------
+    jump b2_end                                      # E N D ------
 
     return
 label b2_end:
@@ -113,7 +113,6 @@ label b2_end:
                     pass
 
     return
-    
 label MissMute:
     Nine "Yeah that’s my nickname for her."
     Nine "Fitting don’t you think? She hasn’t said a word since I joined lmao"
