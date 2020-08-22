@@ -97,7 +97,7 @@ label WhyCooking:
        "{i}You and Alistair talk about the subject for the last few remaining minutes. {/i}"
        jump b3_end
        
-label b3_b3_end:
+label b3_end:
 	     if (num_team_members < 2):
 		if not Alistair_joined_team:
 		     menu:
