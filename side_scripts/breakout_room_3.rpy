@@ -13,9 +13,7 @@ label breakout_room_3:
         
         if Jessica_angry
             call JessGone
-        else 
-            ...
-            ...
+
             
     return
     
