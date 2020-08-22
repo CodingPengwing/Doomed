@@ -116,7 +116,7 @@ label PromptSpeak:
     return
 
 label shouko_message1:
-    centered "You have (1) new messages"
+    centered "{i}You have (1) new messages"
     centered "Shouko: Thanks for talking to me! That really made me feel appreciated > <"
     menu:
         "No worries at all!":
@@ -128,7 +128,7 @@ label shouko_message1:
         
     
 label shouko_message2:
-    centered "You have (1) new messages"
+    centered "{i}You have (1) new messages"
     centered "Shouko: I really don’t think you should choose Nine as a teammate… > <;"
     menu:
         "I agree.. He seems a bit dodgy":
@@ -139,7 +139,7 @@ label shouko_message2:
     return
 
 label shouko_message3:
-    centered "You have (1) new messages"
+    centered "{i}You have (1) new messages"
     centered "Shouko: Don’t listen to a word he’s saying XD Apparently last sem he got caught cheating and failed :P"
     menu:
         "Yikes...":
