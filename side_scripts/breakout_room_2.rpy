@@ -1,6 +1,9 @@
 label breakout_room_2:
     $ shouko_message = False
     
+    show Nine_1 at top_left_screen
+    #SHOUKO show at top_right_screen   
+    
     "You are last to join, no one seems to be talking. The girl appears to be on mute."
     Nine “Finally someone else is here!" 
     Nine "Felt like I was talking to a brick wall with Miss Mute over here.” 
