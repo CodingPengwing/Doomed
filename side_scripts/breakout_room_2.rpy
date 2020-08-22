@@ -80,7 +80,7 @@ label breakout_room_2:
 
     return
 label b2_end:
-    seen blank
+    scene blank
     centered "{i}The Outbreak room has ended."
     if (num_team_members < 2):
         if not Nine_joined_team:
