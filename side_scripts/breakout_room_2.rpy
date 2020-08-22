@@ -91,6 +91,7 @@ label b2_end:
                         "Nine declined your invitation."
                         show Nine_1 at middle
                         Nine "F**k off bro."                      # NINE INDIVIDUAL SHOT
+                        scene blank
                     else:
                         $ num_team_members += 1
                         $ Nine_joined_team = True
@@ -109,7 +110,7 @@ label b2_end:
                     else:
                         $ num_team_members += 1
                         $ Shouko_joined_team = True
-                        "Shouko accepted your invitation"
+                        "Shouko accepted your invitation"                        #SHOUKO INDIVIDUAL SHOT
                         "Successfully acquired a new teammate!"
                     pass
                 "No":
