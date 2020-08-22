@@ -87,6 +87,7 @@ label b2_end:
                 "Yes":
                     if Nine_angry:
                         "Nine declined your invitation."
+                        show Nine_1 at middle
                         Nine "F**k off bro."                      # NINE INDIVIDUAL SHOT
                     else:
                         $ num_team_members += 1
