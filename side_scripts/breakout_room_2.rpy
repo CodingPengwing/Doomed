@@ -2,7 +2,8 @@ label breakout_room_2:
     $ shouko_message = False
     
     "You are last to join, no one seems to be talking. The girl appears to be on mute."
-    Nine “Finally someone else is here! Felt like I was talking to a brick wall with Miss Mute over here.” 
+    Nine “Finally someone else is here!" 
+    Nine "Felt like I was talking to a brick wall with Miss Mute over here.” 
     Shouko “…” 
     
     menu:
@@ -15,7 +16,7 @@ label breakout_room_2:
     Nine “I was just saying how anyone fortunate enough to be on my team would absolutely ace this subject." 
     
     if shouko_message:
-        centre "{i}You receive a friend request from \"Shouko Oogushi\"."
+        centered "{i}You receive a friend request from \"Shouko Oogushi\"."
         menu:
             "Accept friend request":
                 pass
@@ -23,7 +24,9 @@ label breakout_room_2:
                 $ shouko_message = False
                 pass
                 
-    Nine “Not to brag or anything but I’m 190% sure I’m the smartest person in this tute,no offence to you or anything, but you probably won’t do that well just by yourself haha”
+    Nine “Not to brag or anything but I’m 190% sure I’m the smartest person in this tute."
+    Nine "No offence to you or anything," 
+    Nine "but you probably won’t do that well just by yourself haha.”
     
     menu:
         "Continue to listen to his rant":
@@ -69,8 +72,8 @@ label breakout_room_2:
     
     if shouko_message:
         call shouko_final_moments
-    else 
-        jump end      # E N D
+    else: 
+        jump end                                      # E N D ------ 
            
     return
 
@@ -81,7 +84,8 @@ label end:
     return
 
 label MissMute:
-    Nine “Yeah that’s my nickname for her. Fitting don’t you think? She hasn’t said a word since I joined lmao”
+    Nine “Yeah that’s my nickname for her."
+    Nine "Fitting don’t you think? She hasn’t said a word since I joined lmao”
     Shouko “{i}She looks as if to speak but decides against it.{/i}”
     menu: 
         "Prompt her to speak.”:
@@ -106,13 +110,14 @@ label PromptSpeak:
             pass    
         "What were you guys talking about before?":
             Nine "Oh you know..."
+            return
             pass
     Nine "So anyways..."
     return
 
 label shouko_message1:
-    centre "You received a message from Shouko"
-    centre "Shouko: Thanks for talking to me! That really made me feel appreciated > <"
+    centered "You have (1) new messages"
+    centered "Shouko: Thanks for talking to me! That really made me feel appreciated > <"
     menu:
         "No worries at all!":
             pass
@@ -123,8 +128,8 @@ label shouko_message1:
         
     
 label shouko_message2:
-    centre "You received a message from Shouko"
-    centre "Shouko: I really don’t think you should choose Nine as a teammate… > <;"
+    centered "You have (1) new messages"
+    centered "Shouko: I really don’t think you should choose Nine as a teammate… > <;"
     menu:
         "I agree.. He seems a bit dodgy":
             pass
@@ -134,8 +139,8 @@ label shouko_message2:
     return
 
 label shouko_message3:
-    centre "You received a message from Shouko"
-    centre "Shouko: Don’t listen to a word he’s saying XD Apparently last sem he got caught cheating and failed :P"
+    centered "You have (1) new messages"
+    centered "Shouko: Don’t listen to a word he’s saying XD Apparently last sem he got caught cheating and failed :P"
     menu:
         "Yikes...":
             pass
@@ -148,11 +153,12 @@ label Idontknow:
     Nine "Uhh okay? Why though?"
     menu:
         "I'm just a little indecisive":
-            Nine “Right… Decide fast though cause I’m sorta in high demand right now.” 
+            Nine “Right…" 
+            Nine "Decide fast though cause I’m sorta in high demand right now.” 
             Nine "REALLY"
             Nine "HIGH"
             Nine "DEMAND"
-            "(Nine leaves the room)"    # NINE LEAVES
+            "(Nine leaves the room)"                      # NINE LEAVES
             pass
         "You seem like kinda a shitty person...":
             call nine_be_angry
@@ -162,7 +168,7 @@ label Idontknow:
 label nine_be_angry:
     $ nine_angry = TRUE
     Nine “{cps=*3}What the fuck did you just fucking say about me, you little bitch? I’ll have you know I graduated top of my class in the Navy Seals, and I’ve been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I’m the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fuckin-{/cps}”
-    "(Nine leaves the room)"           # NINE LEAVES
+    "(Nine leaves the room)"                              # NINE LEAVES
     return
 
 label shouko_final_moments:
@@ -177,7 +183,7 @@ label shouko_final_moments:
             Shouko "?!"     
             Shouko "Am I not supposed to be?"
             Shouko "..."
-            "(Shouko leaves the call)"               # E N D --- SHOUKO LEAVES
+            "(Shouko leaves the call)"                   # E N D --- SHOUKO LEAVES
             $ shouko_angry = TRUE
             return
             pass
@@ -230,7 +236,7 @@ label shouko_final_moments:
         “See you!”:
             pass
             
-    "(Shouko leaves the room)"
+    "(Shouko leaves the room)"                            # SHOUKO LEAVES
 
     return
 
