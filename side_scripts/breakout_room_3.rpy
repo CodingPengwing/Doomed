@@ -11,7 +11,7 @@ label breakout_room_3:
             call ProjectIdeas
             pass
         
-        if Jessica_angry
+        if Jessica_angry:
             call JessGone
   else 
       call JessStay
@@ -102,33 +102,33 @@ label b3_end:
       if (num_team_members < 2):
       if not Alistair_joined_team:
           menu:
-          "Will you invite Alistair to join your team?"
-          "Yes":
-              if Alistair_angry:
-              "Alistair declined your invitation."
-              Alistair "Not after what you've said."                      # Alistair INDIVIDUAL SHOT
-              else:
-              $ num_team_members += 1
-              $ Alistair_joined_team = True
-              "Alistair accepted your invitation."
-              "Successfully acquired a new teammate!"
-              pass
-          "No":
-              pass
+              "Will you invite Alistair to join your team?"
+              "Yes":
+                  if Alistair_angry:
+                      "Alistair declined your invitation."
+                      Alistair "Not after what you've said."                      # Alistair INDIVIDUAL SHOT
+                  else:
+                    $ num_team_members += 1
+                    $ Alistair_joined_team = True
+                    "Alistair accepted your invitation."
+                    "Successfully acquired a new teammate!"
+                    pass
+              "No":
+                  pass
       if (num_team_members < 2):
       if not Jessica_joined_team:
           menu:
           "Will you invite Jessica to join your team?"
           "Yes":
               if Jessica_angry:
-              "Jessica declined your invitation"
-              Jessica "You seriously think I would even consider working with you??"  # Jessica INDIVIDUAL SHOT
+                "Jessica declined your invitation"
+                Jessica "You seriously think I would even consider working with you??"  # Jessica INDIVIDUAL SHOT
               else:
-              $ num_team_members += 1
-              $ Jessica_joined_team = True
-              "Jessica accepted your invitation"
-              "Successfully acquired a new teammate!"
-              pass
+                $ num_team_members += 1
+                $ Jessica_joined_team = True
+                "Jessica accepted your invitation"
+                "Successfully acquired a new teammate!"
+                pass
           "No":
               pass
       return
@@ -140,7 +140,7 @@ label Interested:
         Alistair “But! I can only show you if you work with me though."
         menu:
             "Yeah, let’s team up!":
-                if num_team_members < 2
+                if num_team_members < 2:
                   call TeamUp
                   pass
                 else
