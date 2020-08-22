@@ -1,4 +1,4 @@
-﻿# Declare characters used by this game. The color argument colorizes the
+# Declare characters used by this game. The color argument colorizes the
 # name of the character.
 define Josh = Character("Josh Ong", color = "#00FFFF")
 define Brigette = Character("Brigette Simper", color = "#0055FF")
@@ -20,6 +20,10 @@ transform bottom_screen:
     xalign 0.35
     yalign 0.70
 
+transform middle:
+    xalign 0.5
+    yalign 0.5
+
 image blank = Solid("#000000")
 image home space = Image("home_space.png")
 
@@ -36,10 +40,13 @@ image Josh_room = Image("josh_room.png")
 
 image Nine_1 = Image("nine_1.jpg")
 
+image blue_screen = Image("blue_screen.jpg")
+
 
 label start:
 
     $ player_score = 0;
+    $ num_team_members = 0;
 
     $ Josh_angry = False
     $ Brigette_angry = False
@@ -95,15 +102,18 @@ label start:
     # end game
     return
 
+
 label to_sleep:
     player "* Arggh, but I can't ditch 3 classes in a row. Damn it! *"
     return
 
-label go_to_class:
-    call breakout_room_1
-    call breakout_room_2
-    call breakout_room_3
-    return
+
+
+
+
+
+
+
 
 
 
@@ -150,124 +160,8 @@ label go_to_class:
     # "You are the last to join, and the two strangers are already talking."
 
 
-    return
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    #
-    #
-    # "…"
-    # "You are the last to join, and the two strangers are already talking."
-    # "U: (Hey! How are you guys doing?) , (Ooh.. did I interrupt something?)"
-    #
-    # "U: Hey! How are you guys doing?"
-    # "Josh: Yo dude!"
-    # "Brigette: … [scowls]"
-    # "Josh: I’m doing great, just a ‘lil bit behind on lectures but nothing a 2am sesh won’t fix."
-    # "Brigette: …"
-    # "U: Oh! Do you guys know each other? (continue off from below)"
-    #
-    # "U: Ooh.. did I interrupt something?"
-    # "Josh: Yo dude!"
-    # "Brigette: Mind your own business. [-10]"
-    # "Josh: [chuckles] We went off on a tangent, nothing to worry about!"
-    #
-    #
-    # "U: Oh! Do you guys know each other?"
-    # "Josh: Hmm… I dunno her."
-    # "Brigette: Hey! [pouts]"
-    # "Josh: Joking, joking! I’ve known Bri for like a year, I basically pestered her until she talked to me. "
-    # "Brigette: [blushes] Yeah, you were annoying."
-    # "Josh: [chuckles] Yeah, yeah, I know. I’m just that annoying guy you know."
-    # "Brigette: No you’re n-"
-    # "U: (You cut Brigette off to get back on topic.) , (You let Brigette continue, but risk losing time to ask them more questions.)"
-    # "U: Ah, look at the time! We should get back on task."
-    # "Josh: Yeah man, all good. "
-    # "Brigette: [irritated] … ok."
-    # "Josh: It sure is cold in here. I’m gonna go turn on the heater real quick. "
-    # "Josh disappears from the camera view. His mic is left unmuted."
-    # "Brigette: Don’t cut people off next time. [mutters] Jerk."
-    # "Brigette turns off her camera, muting herself."
-    # "…"
-    # "Josh: And… I’m back!"
-    # "*Doom chat notif* Brigette: busy rn, continue without me."
-    # "U: (Looks like it’s just us two now.) , (Cool guitar you got there!) "
-    # "U: Looks like it’s just us two now."
-    # "Josh: Yeah, Bri’s been busy lately… I hope she’s okay."
-    # "U: (So... what are you majoring in?) , (How’s quarantine?)"
-    # "U: So... what are you majoring in?"
-    # "Josh: I’m in second year Arts, majoring in Creative Writing! Took me a whole year to decide though."
-    # "U: That’s crazy cool!"
-    # "Josh: Thanks man! Bri’s major is hella cool though. "
-    #
-    # "U: You realise that something spicy is brewing here. You remain silent."
-    # "Brigette: No you’re not! There’s… more annoying guys out there."
-    # "Josh: Ooh. Like who?"
-    # "Brigette: [flustered] U-uh..."
-    # "She looks away to the side, blushing. Her voice softens."
-    # "Brigette: Y-you won’t know them."
-    # "Josh: [chuckles] Good. I was gonna fight them haha"
-    # "Josh: Hey y/n, you still there?"
-    # "…"
-    # "U: (Remain silent.) , (Yeah! I just didn’t want to interrupt you guys.)"
-    # "Josh: Welp, looks like they’re not there. Maybe connection problems."
-    # "Brigette: Yeah, I guess so."
-    # "Josh: Oh well. Bri, guess it’s back to storytime."
-    # "They continue talking for a minute."
-    #
-    # "U: Yeah! I just didn’t want to interrupt you guys."
-    # "Brigette: [annoyed] Well it’s about time."
-    # "Josh: Nah no worries! Just wanted to check if you were still there."
-    #
-    #
-    #
-    #
-    # "------- cut out ----"
-    # "U: (So... what are you guys majoring in?) , (How’s quarantine?)"
-    # "U: So... what are you guys majoring in?"
-    # "Josh: I’m in second year Arts, majoring in Creative Writing! Took me a whole year to decide though."
-    # "U: That’s crazy cool!"
-    # "Josh: Thanks man! Bri’s major is hella cool though."
-    #
-    #
-    #
-    # "U: (How’s quarantine?)"
-    # "Josh: It’s been chill, I"
-    #
-    #
-    #
-    #
-    #
-    # "… Like .. Like …. Mind your own business"
-    #
-    #
-    # "Brigette: "
-    # "U: (Looks like it’s just us two now.) , (Cool guitar you got there!) ,"
-    #
-    #
-    #
