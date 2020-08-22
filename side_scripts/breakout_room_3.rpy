@@ -41,9 +41,7 @@ label Waiting
         Jessica “He already apologised, what do you want from him?"
         "..."
         Jessica “Anyways…"
-
         return
-
 label ProjectIdeas:
         Jessica “Project? Who cares about that, I’ve got better things to spend my time on."
         "Alistair joins muted and without his camera on, but he turns on his mic shortly after."
