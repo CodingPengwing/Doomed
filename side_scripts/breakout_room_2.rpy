@@ -61,7 +61,7 @@ label breakout_room_2:
         "Yeah for sure!":
             Nine "Nice! Looking forward to it!"
             $ num_team_members += 1
-            $ nine_join_team = True
+            $ Nine_joined_team = True
             "(Shouko leaves the meeting)"                 # E N D     - TEAM MATE ACQUIRED - NINE
             "{i}You have acquired a team member"
             jump end
@@ -79,33 +79,33 @@ label breakout_room_2:
     jump end                                      # E N D ------
 
     return
-label end:
+label b2_end:
     if (num_team_members < 2):
-        if not nine_join_team:
+        if not Nine_joined_team:
             menu:
                 "Will you invite Nine-One to join your team?"
                 "Yes":
-                    if nines_angry:
+                    if Nine_angry:
                         "Nine declined your invitation."
                         Nine "F**k off bro."                      # NINE INDIVIDUAL SHOT
                     else:
                         $ num_team_members += 1
-                        $ nine_join_team = True
+                        $ Nine_joined_team = True
                         "Nine accepted your invitation."
                         "Successfully acquired a new teammate!"
                     pass
                 "No":
                     pass
     if (num_team_members < 2):
-        if not shouko_join_team:
+        if not Shouko_joined_team:
             menu:
                 "Will you invite Shouko to join your team?"
                 "Yes":
-                    if shouko_angry:
+                    if Shouko_angry:
                         "Shouko declined your invitation"
                     else:
                         $ num_team_members += 1
-                        $ shouko_join_team = True
+                        $ Shouko_joined_team = True
                         "Shouko accepted your invitation"
                         "Successfully acquired a new teammate!"
                     pass
@@ -113,10 +113,11 @@ label end:
                     pass
 
     return
+    
 label MissMute:
     Nine "Yeah that’s my nickname for her."
     Nine "Fitting don’t you think? She hasn’t said a word since I joined lmao"
-   "{i}Shouko looks as if to speak but decides against it.{/i}"
+    "{i}Shouko looks as if to speak but decides against it.{/i}"
     menu:
         "Prompt her to speak.":
             call PromptSpeak
@@ -194,10 +195,11 @@ label Idontknow:
     return
 
 label nine_be_angry:
-    $ nine_angry = True
+    $ Nine_angry = True
     Nine "{cps=*3}What the fuck did you just fucking say about me, you little bitch? I’ll have you know I graduated top of my class in the Navy Seals, and I’ve been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I’m the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fuckin-{/cps}"
     "(Nine leaves the room)"                              # NINE LEAVES
     return
+
 label shouko_final_moments:
     Shouko "..."
     Shouko "Is he finally gone?"
@@ -211,7 +213,7 @@ label shouko_final_moments:
             Shouko "Am I not supposed to be?"
             Shouko "..."
             "(Shouko leaves the call)"                   # E N D --- SHOUKO LEAVES
-            $ shouko_angry = True
+            $ Shouko_angry = True
             return
             pass
 
