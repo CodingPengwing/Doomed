@@ -17,8 +17,7 @@ label breakout_room_3:
 	     call JessStay
           
      return
-     
-     label HopefullyOtherGuyJoins:
+label HopefullyOtherGuyJoins:
        Jessica "Yeah, I’ve got something for you guys when he joins."
        "{i}Alistair joins muted and without his camera on, but he turns on his mic shortly after.{/i}"
        Alistair "Sorry I joined late, what's happening?"
@@ -31,12 +30,12 @@ label breakout_room_3:
                pass
        return
      
-     label NoWorries:
+label NoWorries:
        Jessica "You guys are gonna love this."
        Alistair "I’m excited, let's hear it!"
        return
        
-     label Waiting:
+label Waiting:
        Alistair "Ahhh… I just had some issues. I’m really sorry."
        Jessica "He already apologised, what do you want from him?"
        "..."
@@ -44,7 +43,7 @@ label breakout_room_3:
 
        return
 
-     label ProjectIdeas:
+label ProjectIdeas:
        Jessica "Project? Who cares about that, I’ve got better things to spb3_end my time on."
        "Alistair joins muted and without his camera on, but he turns on his mic shortly after."
        Alistair "Sorry I joined late, what's happening?"
@@ -65,7 +64,7 @@ label breakout_room_3:
                pass
        return
        
-     label JessGone:
+label JessGone:
        Alistair "Actually, I’ve got something cool to show you."
        {i}You hear some shuffling sounds.{/i}
        Alistair "Wanna know why my camera has been off the entire time?"
@@ -89,7 +88,7 @@ label breakout_room_3:
                pass
        return
        
-     label WhyCooking:
+label WhyCooking:
        Alistair "Ahh, come on man! You really don’t understand do you?"
        Alistair "Kinda a pity. Don’t worry about it."
        "{i}Alistair seems disappointed.{/i}"
@@ -98,7 +97,7 @@ label breakout_room_3:
        "{i}You and Alistair talk about the subject for the last few remaining minutes. {/i}"
        jump b3_end
        
-     label b3_b3_end:
+label b3_b3_end:
 	     if (num_team_members < 2):
 		if not Alistair_joined_team:
 		     menu:
@@ -133,7 +132,7 @@ label breakout_room_3:
 			     pass
 	     return
 
-     label Interested:
+label Interested:
        Alistair "Now that’s what I’m talking about"
        You and Alistair talk about pancakes for a minute.
        Alistair "Anyway, I’ve actually got something related to the class... I think it will help out big time."
@@ -153,13 +152,13 @@ label breakout_room_3:
                pass
        return
        
-     label ImGood:
+label ImGood:
        Alistair "Welp. I’ll see you in class I guess."
        "{i}Alistair mutes and turns off video.{/i}"
        jump b3_end
        return
        
-     label FoundMembers:
+label FoundMembers:
        Alistair "Ah... you realise this is a room to find group members right?"
        player "Yikes, I missed that part of the instructions…"
        Alistair "Welp. I’ll see you in class I guess."
@@ -169,7 +168,7 @@ label breakout_room_3:
        jump b3_end
        return
        
-     label TeamUp:
+label TeamUp:
        "{i}Alistair joins your team{/i}"                    #    - TEAM MATE ACQUIRED - Alistair
        Alistair "Alright, give me a second."
        Alistair sb3_ends a link.
@@ -186,7 +185,7 @@ label breakout_room_3:
        jump b3_end 
        return
 	
-     label JessStay:
+label JessStay:
        Jessica "I actually just got my third UMLL yesterday! Not trying to flex, just wanted you guys to know!"
        Jessica Oh! Also, have you guys heard of the new party happening next week? Secret Mondays?
        Alistair Hey, that sounds lit! You guys wanna all go together?
@@ -207,7 +206,7 @@ label breakout_room_3:
 		     call BackOnTopic
 	return
 
-     label BackOnTopic:
+label BackOnTopic:
        Jessica "Really…? You're just gonna to interrupt me with your boring project?"
        Jessica "Yikes, I’m outta here."
        Jessica mutes and turns off camera.
@@ -217,7 +216,7 @@ label breakout_room_3:
        call JessGone
        return
      
-     label Mask:
+label Mask:
        Jessica "Yeah! I actually make them myself, let me show you some of my designs."
        Jessica "If there’s any you like, check out my website! I’ll hook you guys up with a discount too."
        "{i}Jessica disappears but quickly returns to her seat, now wearing a mask.{/i}"                         # JESSICA NEEDS A MASK HERE
@@ -235,7 +234,7 @@ label breakout_room_3:
                pass
        return
           
-     label InsultJessica:
+label InsultJessica:
        Jessica "… Seriously? That’s all you have to say? What an asshole."
        "{i}Jessica leaves the outbreak room.{/i}"
        Alistair "Hey man. That wasn’t nice."
