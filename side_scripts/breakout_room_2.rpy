@@ -85,6 +85,7 @@ label end:
                 "Yes":
                     if nines_angry:
                         "Nine declined your invitation."
+                        Nine "F**k off bro."                      # NINE INDIVIDUAL SHOT
                     else:
                         $ num_team_members += 1
                         $ nine_join_team = True
@@ -226,7 +227,7 @@ label shouko_final_moments:
         “It was fun talking to you!”:
             pass
     
-    # SHOUKO BLUSHES
+                                                                 # SHOUKO BLUSHES
     
     Shouko “I just wanted to warn you about Nine.”
     Shouko “Thanks for believing me.”
@@ -255,7 +256,7 @@ label shouko_final_moments:
     centered "Outbreak room ends in 60 seconds."
     
     Shouko “It was nice talking to you!”
-    # SHOUKO BLUSHES
+                                                                        # SHOUKO BLUSHES
     Shouko “Hopefully I’ll get to talk to you again! > <”
     
     menu:
