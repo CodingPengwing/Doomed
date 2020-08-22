@@ -78,7 +78,7 @@ label breakout_room_2:
     return
 
 label end:
-    if num_team_members < 2:
+    if (num_team_members < 2):
         if not nine_join_team:
             menu:
                 "Will you invite Nine-One to join your team?"
@@ -94,7 +94,7 @@ label end:
                     pass
                 "No":
                     pass
-    if num_team_members < 2:            
+    if (num_team_members < 2):            
         if not shouko_join_team:
             menu:  
                 "Will you invite Shouko to join your team?"
