@@ -76,7 +76,7 @@ label breakout_room_2:
 
 label end:
     if num_team_members < 2:
-        ???????
+        #???????
         
     return
 
