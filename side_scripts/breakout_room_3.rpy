@@ -216,6 +216,7 @@ label b3_Mask:
     "{i}Jessica disappears but quickly returns to her seat, now wearing a mask.{/i}"                           
     # Show Jessica_3 at top_left                                                                                     # JESSICA NEEDS A MASK HERE  
     Jessica "Check it out."
+    Jessica "I like to make my teddy bear wear my masks"
     Alistair "Damn, that's pretty cool!"
     Jessica "Right?? Look at this one too!"  
     "{i}Jessica swaps out her mask to another design.{/i}"
