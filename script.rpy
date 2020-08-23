@@ -99,7 +99,8 @@ label start:
     $ Jessica_mentioned_teddy = False
     $ Brigette_mentioned_teddy = False
     $ Shouko_mentioned_teddy = False
-
+    
+    call artist_statement
     call disclaimer_scene
     call intro
     call online_class_scene
@@ -152,6 +153,26 @@ label start:
     return
 
 
+#---
+# artist statement
+label artist_statement:
+    scene blank
+    centered "{b}{size=30}Quick introduction{/size}{/b}\n
+    \n\n
+    The purpose of this of the project is to reflect on the current dynamic situation regarding Covid-19 all over the world, and effects it has on our everyday life.
+    The pandemic has made the year 2020 one to be remembered for many wrong reasons, with bushfires and natural disasters, as well as political unrest being other causes of concern.
+    As university students, we the creators, felt it was fitting that we recreate the struggles of our own online learning experience, and the difficulties related to such communications, in a light-hearted manner.
+    Some references in this product will be better understood by university students (especially from the University of Melbourne),
+    however, we welcome and encourage students and gamers everywhere to play and enjoy the game.\n
+    \n\n
+    As most university students would know, the platform Zoom is now used extensively in our everyday communications.
+    We took inspiration from this, which is why the game is called Doomed.\n
+    \n\n
+    Most of the visual elements presented in this visual novel were self-produced, with a few exceptions being listed in the \"About\" section from the menu.\n
+    We would like to give very special thanks to our friend Crystal Li for allowing us to feature her amazing artworks in our story. Without her contributions, we would not have any product to offer... it would have been truely doomed."
+    return
+    
+    
 
 #---
 # disclaimer for the product
