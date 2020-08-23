@@ -2,7 +2,7 @@ label breakout_room_2:
     $ shouko_message = False
 
     show Nine_1 at top_left_screen
-    #SHOUKO show at top_right_screen
+    show Shouko_1 at top_right_screen
 
     "You are last to join, no one seems to be talking. The girl appears to be on mute."
     Nine "Finally someone else is here!"
@@ -78,46 +78,63 @@ label breakout_room_2:
         call shouko_final_moments
 
     jump b2_end                                      # E N D ------
-
     return
+
 label b2_end:
     scene blank
     centered "{i}The Outbreak room has ended."
-    if (num_team_members < 2):
-        if not Nine_joined_team:
-            menu:
-                "Will you invite Nine-One to join your team?"
-                "Yes":
-                    if Nine_angry:
-                        "Nine declined your invitation."
-                        show Nine_1 at middle
-                        Nine "F**k off bro."                      # NINE INDIVIDUAL SHOT
-                        scene blank
-                    else:
-                        $ num_team_members += 1
-                        $ Nine_joined_team = True
-                        "Nine accepted your invitation."
-                        "Successfully acquired a new teammate!"
-                    pass
-                "No":
-                    pass
-    if (num_team_members < 2):
-        if not Shouko_joined_team:
-            menu:
-                "Will you invite Shouko to join your team?"
-                "Yes":
-                    if Shouko_angry:
-                        "Shouko declined your invitation"
-                    else:
-                        $ num_team_members += 1
-                        $ Shouko_joined_team = True
-                        "Shouko accepted your invitation"
-                        "Successfully acquired a new teammate!"
-                    pass
-                "No":
-                    pass
 
+    menu:
+        "Will you invite Nine-One to join your team?"
+        "Yes":
+            call add_Nine
+            pass
+        "No":
+            pass
+
+    menu:
+        "Will you invite Shouko to join your team?"
+        "Yes":
+            call add_Nine
+            pass
+        "No":
+            pass
+
+    # if (num_team_members < 2):
+    #     if not Nine_joined_team:
+    #         menu:
+    #             "Will you invite Nine-One to join your team?"
+    #             "Yes":
+    #                 if Nine_angry:
+    #                     "Nine declined your invitation."
+    #                     show Nine_1 at middle
+    #                     Nine "F**k off bro."                      # NINE INDIVIDUAL SHOT
+    #                     scene blank
+    #                 else:
+    #                     $ num_team_members += 1
+    #                     $ Nine_joined_team = True
+    #                     "Nine accepted your invitation."
+    #                     "Successfully acquired a new teammate!"
+    #                 pass
+    #             "No":
+    #                 pass
+    # if (num_team_members < 2):
+    #     if not Shouko_joined_team:
+    #         menu:
+    #             "Will you invite Shouko to join your team?"
+    #             "Yes":
+    #                 if Shouko_angry:
+    #                     "Shouko declined your invitation"
+    #                 else:
+    #                     $ num_team_members += 1
+    #                     $ Shouko_joined_team = True
+    #                     "Shouko accepted your invitation"
+    #                     "Successfully acquired a new teammate!"
+    #                 pass
+    #             "No":
+    #                 pass
     return
+
 label MissMute:
     Nine "Yeah that’s my nickname for her."
     Nine "Fitting don’t you think? She hasn’t said a word since I joined lmao"
