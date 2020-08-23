@@ -28,7 +28,7 @@ label breakout_room_1:
     show Brigette_one at top_right_screen
 
     "You are last to join."
-    "The two strangers are already talking."
+    "The two stangers are already talking."
 
     menu:
         "Hey! How are you guys doing?":
@@ -90,6 +90,8 @@ label b1_continue:
 
     show Josh_two at top_left_screen
     Josh "Good. I was gonna fight them haha."
+    scene blank
+    show Brigette_threeb at top_right_screen
     show Josh_one at top_left_screen
     Josh "Hey [player_name], you still here?"
 
@@ -121,7 +123,7 @@ label b1_continue:
             Josh "?"
             call b1_tellus
             pass
-        "Cute teddybear in the background Brigette!":
+        "Cute teddy bear in the background Brigette!":
             call b1_teddybear
             pass
 
@@ -201,11 +203,13 @@ label b1_tellus:
 
 label b1_cutoff:
     player "Ah, look at the time! We should get back on task."
+    scene blank
     show Josh_one at top_left_screen
-    show Brigette_two at top_left_screen
+    show Brigette_two at top_right_screen
 
     Josh "Yeah man, all good."
     Brigette "... okay."
+
     Josh "It sure is cold in here. I’m gonna go turn on the heater real quick."
     show Josh_room at top_left_screen
     "{i}Josh disappears from the camera view. His mic is left unmuted."
