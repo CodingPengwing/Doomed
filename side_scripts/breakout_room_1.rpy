@@ -260,7 +260,7 @@ label b1_justtwo:
     return
 
 label b1_coolguitar:
-    player "Wow! What type of guitar is that?"
+    player "What type of guitar is that?"
     Josh "It's an electric guitar, it was my dad's."
     Josh "It was his favourite guitar, he handed it down to me before he passed."
     menu:
