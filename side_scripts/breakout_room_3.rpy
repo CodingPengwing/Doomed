@@ -1,4 +1,5 @@
 label breakout_room_3:
+    play music music_room_three fadein 10.0 loop
     scene blank
     "You are the first to join, Jessica connects shortly after with camera and mic on."
 
@@ -114,6 +115,9 @@ label b3_WhyCooking:
     jump b3_end
 
 label b3_end:
+    stop music fadeout 5.0
+    scene transition
+    centered "{i}The Outbreak room has ended."
     if not Alistair_joined_team:
         menu:
             "Will you invite Alistair to join your team?"
