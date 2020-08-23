@@ -2,6 +2,7 @@ label breakout_room_3:
     play music music_room_three fadein 10.0 loop
     scene blank
     "You are the first to join, Jessica connects shortly after with camera and mic on."
+    show Jessica_one at middle
 
     Jessica "Oh, it's just you."
 
@@ -22,6 +23,9 @@ label breakout_room_3:
 
 label b3_HopefullyOtherGuyJoins:
     Jessica "Yeah, I’ve got something for you guys when he joins."
+    hide Jessica_one
+    show Jessica_one at top_left_screen
+    show Alistair_blank at top_right_screen
     "{i}Alistair joins muted and without his camera on, but he turns on his mic shortly after.{/i}"
     Alistair "Sorry I joined late, what's happening?"
     menu:
@@ -40,23 +44,26 @@ label b3_NoWorries:
 
 label b3_Waiting:
     Alistair "Ahhh… I just had some issues. I’m really sorry."
-    show Jessica_two at top_left
+    show Jessica_two at top_left_screen
     Jessica "He already apologised, what do you want from him?"                                                                                 # Jessica uncomfortable (change expression?)
     "..."
-    show Jessica_one at top_left                                                                                                                              # return to Jessica default expression
+    show Jessica_one at top_left_screen                                                                                                                              # return to Jessica default expression
     Jessica "Anyways…"
     return
 
 label b3_ProjectIdeas:
     Jessica "Project? Who cares about that, I’ve got better things to spend my time on."
-    "Alistair joins muted and without his camera on, but he turns on his mic shortly after."
+    hide Jessica_one
+    show Jessica_one at top_left_screen
+    show Alistair_blank at top_right_screen
+    "{i}Alistair joins muted and without his camera on, but he turns on his mic shortly after."
     Alistair "Sorry I joined late, what's happening?"
     Jessica "Can you believe [player_name]? They want to talk about the project… how lame."
     player "I-"
     Alistair "Ahh there’s nothing wrong with that! Maybe we should talk about it."
-    show  Jessica_two at top_left                                                                                                       #Jessica unhappy (change expression?)
+    show  Jessica_two at top_left_screen                                                                                                       #Jessica unhappy (change expression?)
     Jessica "You too?? ... I can’t believe you guys."
-    "Alistair and Jessica go back and forth for a minute."
+    "{i}Alistair and Jessica go back and forth for a minute."
     Jessica "Yikes. You guys suck, I’m out of here."
     "{i}Jessica mutes and turns off her camera.{/i}"
     scene blank                                                                                                         #Jessica turns off camera
@@ -80,19 +87,19 @@ label b3_JessGone:
         "No offense man, I just want to talk about the project.":
             Alistair "Well... I would say it’s related."
             pass
-    "You hear some sounds of metal clanking."
+    "{i}You hear some sounds of metal clanking."
     "{i}Alistair turns on his camera, revealing Alistair in his kitchen.{/i}"
-    show  Alistair_oneA at top_right                                                                                                          #Alistair turns on camera (are we making his pancake flip?)
+    show  Alistair_oneA at middle                                                                                                          #Alistair turns on camera (are we making his pancake flip?)
     Alistair "Yo. I’m making some pancakes."
-    show Alistair_oneA
+    show Alistair_oneA at middle
     "..."
-    show Alistair_oneB
+    show Alistair_oneB at middle
     "..."
-    show Alistair_oneC
+    show Alistair_oneC at middle
     "..."
-    show Alistair_oneB
+    show Alistair_oneB at middle
     "..."
-    show Alistair_oneA
+    show Alistair_oneA at middle
     Alistair "If you pick me for your team, I’ll give you some pointers…"
     Alistair "And maybe, just maybe… I’ll reveal my secret recipe."
     menu:
@@ -108,7 +115,7 @@ label b3_WhyCooking:
     Alistair "Ahh, come on man! You really don’t understand do you?"
     Alistair "Kinda a pity. Don’t worry about it."
     "{i}Alistair seems disappointed.{/i}"
-    show  Alistair_two                                                                                                                  # Alistair unhapppy 
+    show Alistair_two at middle                                                                                                             # Alistair unhapppy
     Alistair "Guess I can’t blame you for wanting to stay on track. I guess we can talk about the project."
     player "Let’s get back on topic then!"
     "{i}You and Alistair talk about the subject for the last few remaining minutes. {/i}"
@@ -138,15 +145,15 @@ label b3_end:
 
 label b3_Interested:
     Alistair "Now that’s what I’m talking about"
-    show Alistair_oneA
+    show Alistair_oneA at middle
     "..."
-    show Alistair_oneB
+    show Alistair_oneB at middle
     "..."
-    show Alistair_oneC
+    show Alistair_oneC at middle
     "..."
-    show Alistair_oneB
+    show Alistair_oneB at middle
     "..."
-    show Alistair_oneA
+    show Alistair_oneA at middle
     "You and Alistair talk about pancakes for a minute."
     Alistair "Anyway, I’ve actually got something related to the class... I think it will help out big time."
     Alistair "But! I can only show you if you work with me though."
@@ -166,15 +173,15 @@ label b3_Interested:
     return
 
 label b3_ImGood:
-    show Alistair_oneA
+    show Alistair_oneA at middle
     "..."
-    show Alistair_oneB
+    show Alistair_oneB at middle
     "..."
-    show Alistair_oneC
+    show Alistair_oneC at middle
     "..."
-    show Alistair_oneB
+    show Alistair_oneB at middle
     "..."
-    show Alistair_oneA
+    show Alistair_oneA at middle
     Alistair "Welp. I’ll see you in class I guess."
     "{i}Alistair mutes and turns off video.{/i}"                                                                                          #ALISTAIR TURN OFF VIDEO
     jump b3_end
@@ -184,7 +191,7 @@ label b3_FoundMembers:
     Alistair "Ah... you realise this is a room to find group members right?"
     player "Yikes, I missed that part of the instructions…"
     Alistair "Welp. I’ll see you in class I guess."
-    show Alistair_two at top_right                                                                                        #ALISTAIR UNHAPPY (change picture?)
+    show Alistair_two at middle                                                                                        #ALISTAIR UNHAPPY (change picture?)
     "{i}Alistair does not want to work with you.{/i}"
     $ Alistair_angry = true
     "{i}Alistair mutes and turns off video.{/i}"                                                                                                     # ALISTAIR TURN OFF VIDEO ??
@@ -232,8 +239,8 @@ label b3_JessStay:
 label b3_BackOnTopic:
     Jessica "Really…? You're just gonna to interrupt me with your boring project?"
     Jessica "Yikes, I’m outta here."
-    show Jessica_two at top_left                                                                      #JESSICA UNHAPPY (CHANGE PICTURE?)
-    "Jessica mutes and turns off camera."
+    show Jessica_two at top_left_screen                                                                      #JESSICA UNHAPPY (CHANGE PICTURE?)
+    "{i}Jessica mutes and turns off camera."
     "{i}Jessica doesn’t want to work with you{/i}"
     $ Jessica_angry = True
     Alistair "Woah. Explosive."
@@ -244,14 +251,14 @@ label b3_Mask:
     Jessica "Yeah! I actually make them myself, let me show you some of my designs."
     Jessica "If there’s any you like, check out my website! I’ll hook you guys up with a discount too."
     "{i}Jessica disappears but quickly returns to her seat, now wearing a mask.{/i}"
-    show Jessica_three at top_left                                                                                     # JESSICA NEEDS A MASK HERE
+    show Jessica_three at top_left_screen                                                                                     # JESSICA NEEDS A MASK HERE
     Jessica "Check it out."
     Jessica "I like to make my teddy bear wear my masks"
     $ Jessica_mentioned_teddy = True
     Alistair "Damn, that's pretty cool!"
     Jessica "Right?? Look at this one too!"
     "{i}Jessica swaps out her mask to another design.{/i}"
-    show Jessica_four at top_left                                                                                     #CHANGE MASK FOR JESSICA
+    show Jessica_four at top_left_screen                                                                                     #CHANGE MASK FOR JESSICA
     Jessica "I’ll link you guys my {i}stangram{/i}, I’ve got more there"
     menu:
         "Damn, that's really cool!":
@@ -266,7 +273,7 @@ label b3_Mask:
 
 label b3_InsultJessica:
     Jessica "… Seriously? That’s all you have to say? What an asshole."
-    show Jessica_two at top_left                                                                        # Change expression for Jessica (unhappy)
+    show Jessica_two at top_left_screen                                                                        # Change expression for Jessica (unhappy)
     "{i}Jessica leaves the outbreak room.{/i}"
     scene blank
     $ Jessica_angry = True
