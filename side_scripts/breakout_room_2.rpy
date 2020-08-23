@@ -128,7 +128,7 @@ label b2_end:
     #                 else:
     #                     $ num_team_members += 1
     #                     $ Shouko_joined_team = True
-    #                     "Shouko accepted your invitation"
+    #                     "Shouko accepted your invitation."
     #                     "Successfully acquired a new teammate!"
     #                 pass
     #             "No":
