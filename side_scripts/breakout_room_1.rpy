@@ -31,7 +31,7 @@ label breakout_room_1:
     show Brigette_one at top_right_screen
 
     "You are last to join."
-    "The two stangers are already talking."
+    "The two strangers are already talking."
 
     menu:
         "Hey! How are you guys doing?":
@@ -224,8 +224,8 @@ label b1_cutoff:
     Brigette "{size=-12}Jerk.{/size}"
 
     scene blank
-    "{i}Brigette has left the outbreak room."
     show Josh_room at middle
+    "{i}Brigette has left the outbreak room."
     "..."
 
     $ Brigette_angry = True
@@ -274,6 +274,8 @@ label b1_coolguitar:
         "Ah... I’m sorry for your loss dude.":
             call b1_sorryloss
         "Uhh, you selling it? I think it’s just what I need.":
+            scene blank
+            show Josh_three at middle
             Josh "That’s real fucked up man."
             $ Josh_angry = True
             scene blank
