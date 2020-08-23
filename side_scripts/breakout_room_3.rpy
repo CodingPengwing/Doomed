@@ -8,16 +8,16 @@ label breakout_room_3:
 
     menu:
         "Hey! Hopefully the other guy joins soon.":
-            call b3_HopefullyOtherGuyJoins
+            call b3_HopefullyOtherGuyJoins from _call_b3_HopefullyOtherGuyJoins
             pass
         "Yeah, I guess. Do you have any ideas for the project?":
-            call b3_ProjectIdeas
+            call b3_ProjectIdeas from _call_b3_ProjectIdeas
             pass
 
     if Jessica_angry:
-        call b3_JessGone
+        call b3_JessGone from _call_b3_JessGone
     else:
-        call b3_JessStay
+        call b3_JessStay from _call_b3_JessStay
 
     return
 
@@ -30,10 +30,10 @@ label b3_HopefullyOtherGuyJoins:
     Alistair "Sorry I joined late, what's happening?"
     menu:
         "No worries, I think Jessica wants to tell us something.":
-            call b3_NoWorries
+            call b3_NoWorries from _call_b3_NoWorries
             pass
         "What took you so long? We were both waiting!":
-            call b3_Waiting
+            call b3_Waiting from _call_b3_Waiting
             pass
     return
 
@@ -90,27 +90,27 @@ label b3_JessGone:
             pass
     "{i}You hear some sounds of metal clanking."
     "{i}Alistair turns on his camera, revealing Alistair in his kitchen.{/i}"
-    show  Alistair_oneA at middle                                                                                                          #Alistair turns on camera (are we making his pancake flip?)
+    show  Alistair_onea at middle                                                                                                          #Alistair turns on camera (are we making his pancake flip?)
     Alistair "Yo. I’m making some pancakes."
-    show Alistair_oneA at middle
+    show Alistair_onea at middle
     "..."
-    show Alistair_oneB at middle
+    show Alistair_oneb at middle
     "..."
-    show Alistair_oneC at middle
-    "..."
-    scene blank
-    show Alistair_oneB at middle
+    show Alistair_onec at middle
     "..."
     scene blank
-    show Alistair_oneA at middle
+    show Alistair_oneb at middle
+    "..."
+    scene blank
+    show Alistair_onea at middle
     Alistair "If you pick me for your team, I’ll give you some pointers…"
     Alistair "And maybe, just maybe… I’ll reveal my secret recipe."
     menu:
         "Aren’t all pancakes the same? Waffles are better anyways. Also why are you cooking during class time?":
-            call b3_WhyCooking
+            call b3_WhyCooking from _call_b3_WhyCooking
             pass
         "Oooh... now THAT is something I'm interested in!":
-            call b3_Interested
+            call b3_Interested from _call_b3_Interested
             pass
     return
 
@@ -132,7 +132,7 @@ label b3_end:
         menu:
             "Will you invite Alistair to join your team?"
             "Yes":
-                call add_Alistair
+                call add_Alistair from _call_add_Alistair
                 pass
             "No":
                 pass
@@ -140,7 +140,7 @@ label b3_end:
         menu:
             "Will you invite Jessica to join your team?"
             "Yes":
-                call add_Jessica
+                call add_Jessica from _call_add_Jessica
                 pass
             "No":
                 pass
@@ -148,47 +148,48 @@ label b3_end:
 
 label b3_Interested:
     Alistair "Now that’s what I’m talking about"
-    show Alistair_oneA at middle
+    show Alistair_onea at middle
     "..."
-    show Alistair_oneB at middle
+    show Alistair_oneb at middle
     "..."
-    show Alistair_oneC at middle
-    "..."
-    scene blank
-    show Alistair_oneB at middle
+    show Alistair_onec at middle
     "..."
     scene blank
-    show Alistair_oneA at middle
+    show Alistair_oneb at middle
+    "..."
+    scene blank
+    show Alistair_onea at middle
+    $ Alistair_mentioned_recipe = True
     "You and Alistair talk about pancakes for a minute."
     Alistair "Anyway, I’ve actually got something related to the class... I think it will help out big time."
     Alistair "But! I can only show you if you work with me though."
     menu:
         "Yeah, let’s team up!":
             if num_team_members < 2:
-                call b3_TeamUp
+                call b3_TeamUp from _call_b3_TeamUp
                 pass
             else:
                 "You already have a full team"
         "Oh sorry! I’ve already found my other group members.":
-            call b3_FoundMembers
+            call b3_FoundMembers from _call_b3_FoundMembers
             pass
         "Nah, I’m good.":
-            call b3_ImGood
+            call b3_ImGood from _call_b3_ImGood
             pass
     return
 
 label b3_ImGood:
-    show Alistair_oneA at middle
+    show Alistair_onea at middle
     "..."
-    show Alistair_oneB at middle
+    show Alistair_oneb at middle
     "..."
-    show Alistair_oneC at middle
-    "..."
-    scene blank
-    show Alistair_oneB at middle
+    show Alistair_onec at middle
     "..."
     scene blank
-    show Alistair_oneA at middle
+    show Alistair_oneb at middle
+    "..."
+    scene blank
+    show Alistair_onea at middle
     Alistair "Welp. I’ll see you in class I guess."
     "{i}Alistair mutes and turns off video.{/i}"                                                                                          #ALISTAIR TURN OFF VIDEO
     jump b3_end
@@ -200,13 +201,13 @@ label b3_FoundMembers:
     Alistair "Welp. I’ll see you in class I guess."
     show Alistair_two at middle                                                                                        #ALISTAIR UNHAPPY (change picture?)
     "{i}Alistair does not want to work with you.{/i}"
-    $ Alistair_angry = true
+    $ Alistair_angry = True
     "{i}Alistair mutes and turns off video.{/i}"                                                                                                     # ALISTAIR TURN OFF VIDEO ??
     jump b3_end
     return
 
 label b3_TeamUp:
-    call add_Alistair
+    call add_Alistair from _call_add_Alistair_1
     Alistair "Alright, give me a second."
     "{i}Alistair sends a link.{/i}"
     Alistair "I present… detailed notes for the whole class!"
@@ -238,9 +239,9 @@ label b3_JessStay:
     Jessica "… Actually, you might want to bring a mask too."
     menu:
         "A mask?":
-            call b3_Mask
+            call b3_Mask from _call_b3_Mask
         "Shouldn’t we get back on topic?":
-            call b3_BackOnTopic
+            call b3_BackOnTopic from _call_b3_BackOnTopic
     return
 
 label b3_BackOnTopic:
@@ -253,7 +254,7 @@ label b3_BackOnTopic:
     show Alistair_blank at middle
     $ Jessica_angry = True
     Alistair "Woah. Explosive."
-    call b3_JessGone
+    call b3_JessGone from _call_b3_JessGone_1
     return
 
 label b3_Mask:
@@ -276,7 +277,7 @@ label b3_Mask:
             jump b3_end
             pass
         "Hm, that top stitching isn’t very neat... but not bad for a beginner.":
-            call b3_InsultJessica
+            call b3_InsultJessica from _call_b3_InsultJessica
             pass
     return
 
