@@ -49,8 +49,8 @@ transform bottom_screen:
     yalign 0.8
 
 transform middle:
-    xalign 0.1
-    yalign 0.5
+    xalign 0.5
+    yalign 0.1
 
 
 # Backgrounds
