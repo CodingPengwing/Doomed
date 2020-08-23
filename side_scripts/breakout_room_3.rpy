@@ -40,10 +40,10 @@ label b3_NoWorries:
 
 label b3_Waiting:
     Alistair "Ahhh… I just had some issues. I’m really sorry."
-    # Show Jessica_two at top_left
+    show Jessica_two at top_left
     Jessica "He already apologised, what do you want from him?"                                                                                 # Jessica uncomfortable (change expression?)
     "..." 
-    # Show Jessica_one at top_left                                                                                                                              # return to Jessica default expression
+    show Jessica_one at top_left                                                                                                                              # return to Jessica default expression
     Jessica "Anyways…"
     return
 
@@ -54,12 +54,12 @@ label b3_ProjectIdeas:
     Jessica "Can you believe [player_name]? They want to talk about the project… how lame."
     player "I-"
     Alistair "Ahh there’s nothing wrong with that! Maybe we should talk about it."
-    # Show  Jessica_two at top_left                                                                                                       #Jessica unhappy (change expression?)
+    show  Jessica_two at top_left                                                                                                       #Jessica unhappy (change expression?)
     Jessica "You too?? ... I can’t believe you guys."
     "Alistair and Jessica go back and forth for a minute."
     Jessica "Yikes. You guys suck, I’m out of here."
     "{i}Jessica mutes and turns off her camera.{/i}" 
-    # scene blank                                                                                                         #Jessica turns off camera
+    scene blank                                                                                                         #Jessica turns off camera
     $ Jessica_angry = True
     menu:
         "Ah, I’m sorry... that was my fault.":
@@ -82,7 +82,7 @@ label b3_JessGone:
             pass
     "You hear some sounds of metal clanking."
     "{i}Alistair turns on his camera, revealing Alistair in his kitchen.{/i}"
-    # Show  Alistair_oneA at top_right                                                                                                          #Alistair turns on camera (are we making his pancake flip?)
+    show  Alistair_oneA at top_right                                                                                                          #Alistair turns on camera (are we making his pancake flip?)
     Alistair "Yo. I’m making some pancakes."
     show Alistair_oneA
     "..."
@@ -108,7 +108,7 @@ label b3_WhyCooking:
     Alistair "Ahh, come on man! You really don’t understand do you?"
     Alistair "Kinda a pity. Don’t worry about it."
     "{i}Alistair seems disappointed.{/i}"
-    # Show  Alistair_two                                                                                                                  # Alistair unhapppy 
+    Show  Alistair_two                                                                                                                  # Alistair unhapppy 
     Alistair "Guess I can’t blame you for wanting to stay on track. I guess we can talk about the project."
     player "Let’s get back on topic then!"
     "{i}You and Alistair talk about the subject for the last few remaining minutes. {/i}"
@@ -184,7 +184,7 @@ label b3_FoundMembers:
     Alistair "Ah... you realise this is a room to find group members right?"
     player "Yikes, I missed that part of the instructions…"
     Alistair "Welp. I’ll see you in class I guess."
-    # Show Alistair_two at top_right                                                                                        #ALISTAIR UNHAPPY (change picture?)
+    Show Alistair_two at top_right                                                                                        #ALISTAIR UNHAPPY (change picture?)
     "{i}Alistair does not want to work with you.{/i}"
     $ Alistair_angry = true
     "{i}Alistair mutes and turns off video.{/i}"                                                                                                     # ALISTAIR TURN OFF VIDEO ??
@@ -232,7 +232,7 @@ label b3_JessStay:
 label b3_BackOnTopic:
     Jessica "Really…? You're just gonna to interrupt me with your boring project?"                             
     Jessica "Yikes, I’m outta here."         
-    # Show Jessica_two at top_left                                                                      #JESSICA UNHAPPY (CHANGE PICTURE?)
+    Show Jessica_two at top_left                                                                      #JESSICA UNHAPPY (CHANGE PICTURE?)
     "Jessica mutes and turns off camera."
     "{i}Jessica doesn’t want to work with you{/i}" 
     $ Jessica_angry = True
@@ -244,14 +244,14 @@ label b3_Mask:
     Jessica "Yeah! I actually make them myself, let me show you some of my designs."
     Jessica "If there’s any you like, check out my website! I’ll hook you guys up with a discount too."
     "{i}Jessica disappears but quickly returns to her seat, now wearing a mask.{/i}"                           
-    # Show Jessica_three at top_left                                                                                     # JESSICA NEEDS A MASK HERE  
+    Show Jessica_three at top_left                                                                                     # JESSICA NEEDS A MASK HERE  
     Jessica "Check it out."
     Jessica "I like to make my teddy bear wear my masks"
     $ Jessica_mentioned_teddy = True
     Alistair "Damn, that's pretty cool!"
     Jessica "Right?? Look at this one too!"  
     "{i}Jessica swaps out her mask to another design.{/i}"
-    # Show Jessica_four at top_left                                                                                     #CHANGE MASK FOR JESSICA                          
+    Show Jessica_four at top_left                                                                                     #CHANGE MASK FOR JESSICA                          
     Jessica "I’ll link you guys my {i}stangram{/i}, I’ve got more there"
     menu:
         "Damn, that's really cool!":
@@ -266,9 +266,9 @@ label b3_Mask:
 
 label b3_InsultJessica:
     Jessica "… Seriously? That’s all you have to say? What an asshole."            
-    # Show Jessica_two at top_left                                                                        # Change expression for Jessica (unhappy)
+    Show Jessica_two at top_left                                                                        # Change expression for Jessica (unhappy)
     "{i}Jessica leaves the outbreak room.{/i}"
-    # scene blank
+    scene blank
     $ Jessica_angry = True
     Alistair "Hey man. That wasn’t nice."
     "..."
@@ -280,15 +280,3 @@ label b3_InsultJessica:
     show blue_screen
     jump b3_end
     return
-
-
-
-#PICTURES NEEDED
-#Jessica:
-#       Jessica_one
-#       Jessica_two
-#       Jessica_three
-#       Jessica_four
-#Alistair:
-#       Alistair_oneA (flipping pancake so 2/3 pictures??)
-#       Alistair_unhappy
