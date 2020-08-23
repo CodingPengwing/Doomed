@@ -1,5 +1,6 @@
 label b1_end:
-    scene blank
+    stop music fadeout 5.0
+    scene transition
     centered "{i}The Outbreak room has ended."
 
     if not Josh_joined_team:
@@ -19,10 +20,12 @@ label b1_end:
                 pass
             "No":
                 pass
+
     return
 
 
 label breakout_room_1:
+    play music music_room_one fadein 3.0 loop
     scene blank
     show Josh_one at top_left_screen
     show Brigette_one at top_right_screen
@@ -153,9 +156,13 @@ label b1_howtheymet:
     show Josh_two at top_left_screen
     Josh "You have really good memory!"
     Brigette "Thanks..."
+    scene blank
+    show Brigette_oneb at top_right_screen
     show Josh_one at top_left_screen
     Josh "We were in the same group for a project team and well..."
     Josh "For some reason we lost communication with our other group members after the first meeting…"
+    scene blank
+    show Josh_one at top_left_screen
     show Brigette_threeb at top_right_screen
     Brigette "Yeah….. Not sure how that happened... Hahaha"
     Josh "They seemed like cool people though."
