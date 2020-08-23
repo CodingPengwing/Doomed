@@ -78,12 +78,27 @@ label outcome_Brigette_and_Nine:
     return
 
 label outcome_Brigette_and_Shouko:
-    $ player_score = "High Distinction"
+    if Brigette_mentioned_teddy and Shouko_mentioned_teddy
+        centered "{b}{size=40}Score: 80{/size}{/b} \n
+        You did really well - the group environment great"
+        centred "Brigette and Shouko bonded over their teddies and became close friends"
+        centred "You feel like you worked well together, but sometimes things felt too repetitive"
+        centred "You feel that you needed more variety in your group, that Brigette and Shouko bought similar thoughts to the table"
+        centred "Despite a great score, you feel you could have done better"
+    else 
+        centered "{b}{size=40}Score: 55{/size}{/b} \n
+        You didnt do great - Shouko and Brigette did not get along at all"
+        centred "Shouko was easily offended by Brigette despite her having good intensions and miscommunication was rampant"
+        centred "You feel the only thing that held you back was their personalities not aligning"
+        centred "You also noticed they both had a teddy bear in their video"
     return
 
-
 label outcome_Josh_and_Alistair:
-    $ player_score = "High Distinction"
+    centered "{b}{size=40}Score: 76{/size}{/b} \n
+    You did great - everyone worked well together
+    centred "Your group got along with eachother very well, leading to a great time together"
+    centred "You become close friends but only for the semester, quickly drifting apart as there was little common interests"
+    centred "You feel the group was definitely solid, but something was definitely missing, something Josh and Alistair didnt have..."
     return
 
 label outcome_Josh_and_Brigette:
