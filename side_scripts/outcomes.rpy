@@ -87,7 +87,19 @@ label outcome_Josh_and_Alistair:
     return
 
 label outcome_Josh_and_Brigette:
-    $ player_score = "High Distinction"
+    if Brigette_mentioned_teddy and Josh_mentioned_guitar
+        centered "{b}{size=40}Score: 80{/size}{/b} \n
+        You did really well - the group environment was really good but sometimes a bit awkward for you"
+        centred "You become quite close to both of them, enjoying their company"
+        centred "You felt like something was blooming between the two ... but you're not sure."
+        centred "You think they would make a good couple"
+    else
+        centered "{b}{size=40}Score: 77{/size}{/b} \n
+        You did quite well - you felt like you were third wheeling at times ... despite them not dating"
+        centred "You dont become very close to either of them, and go your seperate ways"
+        centred "They seem like a couple so much that it's strange they aren't already dating"
+        centred "You feel happy ..."
+        centred "for Josh and Bridgette but feel lonely yourself"
     return
 
 label outcome_Josh_and_Jessica:
@@ -99,6 +111,9 @@ label outcome_Josh_and_Jessica:
         centred "It was almost as if Jessica's teddy helped out"
     else 
         centered "{b}{size=40}Score: 62{/size}{/b} \n
+        You did ok - the group environemnt was mild at best"
+        centred "You already felt initally that this wasnt going to work out, but it definitely could have been worse"
+        centred "You guys hardly stayed in contact, you just felt that no one had anything in common"
     return
 
 label outcome_Josh_and_Nine:
@@ -126,7 +141,7 @@ label outcome_Josh_and_Shouko:
 
 label outcome_Nine_and_Alistair:
     centered "{b}{size=40}Score: 56{/size}{/b} \n
-    Your score wasn\'t incredible but at least you passed - your group did not get along well"
+    Your score wasn't incredible but at least you passed - your group did not get along well"
     centred "Nine was extremely insistent on cheating but Alistair convinced him not to. You did the projects without Nine making it difficult"
     centred "You merely stay tutorial friends with Alistair and dont really interact with Nine at all"
     return
@@ -148,7 +163,7 @@ label outcome_Shouko_and_Alistair:
         centred "You feel incredibly happy"
     else
         centered "{b}{size=40}Score: 80{/size}{/b} \n
-        You did very well  - enjoyed working together"                                                                                                                   #kinda boring
+        You did very well  - enjoyed working together"
         centred "Alistair did a lot of the work and even taught both you and Shouko a few tricks. You remain friends with them but only temporarily. \n
         While you scored well, you just feel like you missed something important ... also I wonder why Alistair didn't have his camera on"
     return
@@ -171,6 +186,6 @@ label outcome_Shouko_and_Nine:
     Your score was really good but... you were caught cheating - Nine is irritated and Shouko is very unhappy"
     centered "Nine ended up blaming you and Shouko for cheating, and Shouko now has trust issues. \n 
     Shouko stayed very silent throughout the whole project, almost as silent as her teddy"
-    Unfortunately, you recieve an \'at risk\' email, and must speak university representatives. You eventually lose grip of university and leave."
+    Unfortunately, you recieve an 'at risk' email, and must speak university representatives. You eventually lose grip of university and leave."
     centred "You now also have trust issues"
     return
