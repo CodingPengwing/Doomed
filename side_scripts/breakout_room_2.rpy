@@ -60,10 +60,10 @@ label breakout_room_2:
 
     menu:
         "Yeah for sure!":
-            Nine "Nice! Looking forward to it!"
-            "(Shouko has left the room)"                 # E N D     - TEAM MATE ACQUIRED - NINE
+            Nine "Nice! Looking forward to it!"              # E N D     - TEAM MATE ACQUIRED - NINE
             scene blank
             show Nine_one at middle
+            "(Shouko has left the room)"
             call add_Nine
             jump b2_end
 
@@ -180,9 +180,9 @@ label Idontknow:
             Nine "REALLY"
             Nine "HIGH"
             Nine "DEMAND"
-            "(Nine has left the room)"                      # NINE LEAVES
             scene blank
             show Shouko_one at middle
+            "(Nine has left the room)"                      # NINE LEAVES
             pass
         "You seem like kinda a shitty person...":
             call nine_be_angry
@@ -191,7 +191,10 @@ label Idontknow:
 
 label nine_be_angry:
     $ Nine_angry = True
-    Nine "{cps=*3}What the fuck did you just fucking say about me, you little bitch? I’ll have you know I graduated top of my class in the Navy Seals, and I’ve been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I’m the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fuckin-{/cps}"
+    scene blank
+    show Shouko_one at top_right_screen
+    show Nine_two at top_left_screen
+    Nine "{cps=*5}What the fuck did you just fucking say about me, you little bitch? I’ll have you know I graduated top of my class in the Navy Seals, and I’ve been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I’m the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fuckin-{/cps}"
     scene blank
     show Shouko_one at middle
     "(Nine has left the room)"                              # NINE LEAVES
@@ -206,6 +209,8 @@ label shouko_final_moments:
         "What a relief":
             pass
         "Why are you still here?":
+            scene blank
+            show Shouko_three at middle
             Shouko "?!"
             Shouko "Am I not supposed to be?"
             Shouko "..."
@@ -216,7 +221,8 @@ label shouko_final_moments:
             pass
 
     Shouko "I know right."
-    # SHOUKO BLUSHES
+    scene blank
+    show Shouko_two at middle
     Shouko "Thank you for accepting my friend request"
 
     menu:
@@ -224,8 +230,8 @@ label shouko_final_moments:
             pass
         "It was fun talking to you!":
             pass
-    # SHOUKO BLUSHES
-
+    scene blank
+    show Shouko_one at middle
     Shouko "I just wanted to warn you about Nine."
     Shouko "Thanks for believing me."
 
@@ -255,7 +261,6 @@ label shouko_final_moments:
     centered "Outbreak room ends in 60 seconds."
 
     Shouko "It was nice talking to you!"
-                                                                        # SHOUKO BLUSHES
     Shouko "Hopefully I’ll get to talk to you again! (> <)"
 
     menu:
@@ -267,7 +272,11 @@ label shouko_final_moments:
 
 label b2_teddybear:
     $ Shouko_mentioned_teddy = True
+    scene blank
+    show Shouko_two at middle
     Shouko "!"
     Shouko "Yeah I really like teddy bears..."                               # SHOUKO BLUSHES
     Shouko "They're just so adorable..."
+    scene blank
+    show Shouko_one at middle
     return
