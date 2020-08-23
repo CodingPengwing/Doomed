@@ -113,13 +113,33 @@ label outcome_Nine_and_Jessica:
 
 
 label outcome_Shouko_and_Alistair:
-    $ player_score = "High on Drugs"
+    if Shouko_mentioned_teddy and Alistair_mentioned_recipe
+        centered "{b}{size=40}Score: 100{/size}{/b} \n
+        You got full marks ... and even set a record - Shouko and Alistair loved working with you"
+        centred "You feel a sense of deja vu, and it reminds you of that dream you had, with the teddybear and pancake"
+        centred "The group becomes lifelong friends, and you push each other to pursure their dreams"
+        centred "You feel incredibly happy"
+    else
+        centered "{b}{size=40}Score: 80{/size}{/b} \n"
     return
 
 label outcome_Shouko_and_Jessica:
-    $ player_score = "High on Drugs"
+    if Shouko_mentioned_teddy and Jessica_mentioned_mask
+        centered "{b}{size=40}Score: 90{/size}{/b} \n
+        You topped the class ... and set a personal record - everyone had a great time"
+        centred "You become best friends with Shouko and Jessica.\n
+        Shouko becomes less shy after partying with Jessica- Jessica learns to be more empathetic from Shouko"
+    else
+        centered "{b}{size=40}Score: 75{/size}{/b} \n
+        Your score was good - but you feel like you could have done better."
+        centered "Shouko ended up becoming good friends with you and Jessica invited you to a lot of parties but you never became close. \n  
+        You eventually lose contact with both Shouko and Jessica"
     return
 
 label outcome_Shouko_and_Nine:
-    $ player_score = "High on Drugs"
+    centered "{b}{size=40}Score: 0{/size}{/b} \n
+    Your score was really good - but... you were caught cheating"
+    centered "Nine ended up blaming you and Shouko for cheating, and Shouko now has trust issues. \n 
+    Unfortunately, you recieve an \'at risk\' email, and must speak university representatives. You eventually lose grip of university and leave. \n
+    You now also have trust issues"
     return
