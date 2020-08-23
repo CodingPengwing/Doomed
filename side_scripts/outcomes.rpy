@@ -1,8 +1,8 @@
 label end_game:
 
     if num_team_members < 2:
-        call outcome_not_enough_members
-        pass
+        jump outcome_not_enough_members
+    
         
     # All Josh
     if Josh_joined_team and Brigette_joined_team:
