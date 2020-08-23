@@ -1,5 +1,9 @@
 label end_game:
 
+    if num_team_members < 2:
+        call outcome_not_enough_members
+        pass
+        
     # All Josh
     if Josh_joined_team and Brigette_joined_team:
         jump outcome_Josh_and_Brigette
@@ -56,6 +60,17 @@ label end_game:
 
     return
 
+label outcome_not_enough_members:
+    centered "{b}{size=40}Score: 23\%{/size}{/b} \n
+    Your score was... really bad - You failed, and quite miserably too."
+    centered "You ended up having [num_team_members] on your team. Let's just say the following 3 months consisted of many long sleepless nights."
+    centered "If only you had 2 good teammates, how good would that have been? \n
+    If not for your final score, then at least for the sake of your now very saggy eye bags. \n
+    You had one job..."
+    centered "You wish you had the confidence and charm of a Nigerian Prince to approach people and convince them to work with you."
+    centered "Think about it, if you were to do it again, what could you have done better?"
+    return
+    
 
 label outcome_Alistair_and_Jessica:
     centered "{b}{size=40}Score: 70{/size}{/b} \n
