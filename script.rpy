@@ -8,6 +8,14 @@ define Alistair = Character("Alistair Moffat", color = "#44DDDD")
 define Jessica = Character("Jessica Kim", color = "#44DDDD")
 define professor = Character("Professor X", color = "#44DDDD")
 
+# Music
+#renpy.music.register_channel(name, mixer=None, loop=None, stop_on_mute=True, tight=False, file_prefix='', file_suffix='', buffer_queue=True, movie=False, framedrop=True)
+define audio.music_opening = "audio/opening.mp3"
+define audio.music_scary = "<from 5>audio/scary.mp3"
+define audio.music_room_one = "audio/room_one.mp3"
+define audio.music_room_two = "audio/room_two.mp3"
+define audio.music_room_three = "audio/room_three.mp3"
+
 # Brigette pics
 image Brigette_one = Image("Brigette_1.jpg")
 image Brigette_oneb = Image("Brigette_1b.jpg")
@@ -157,6 +165,7 @@ label disclaimer_scene:
 #---
 # wake up scene
 label intro:
+    play music music_opening fadein 2.0
     scene bedroom
     "{i}It's a nice summer day in quarantine."
     "{i}You've just woken up, feeling really tired from last night's League grind."
@@ -172,35 +181,46 @@ label intro:
     "{i}As always, it takes a while for the entire dream to come back, but it starts with you walking down the supermarket isle, with your surgical mask on of course."
     "{i}Doing the groceries is pretty much a contactless sport nowadays, you try to steer clear of everyone. Wouldn't want to get Covid-19, that would be ugly."
     show teddy_one at center
+
     "{i}As you turn the corner of the isle, you see a huge teddy bear sitting in the middle of the supermarket floor."
+    # Music change here
+    stop music fadeout 10.0
+    play music music_scary fadein 2.0
     "{i}It was wearing a huge mask too, but it was very annoyed that it had to do so in public."
     "{i}It thought that it was its own teddy right to be free from any social restraints in the name of \"safety\"."
     "{i}It was pissed, ohhh so pissed, it had a pancake on its left hand that it couldn't eat, all because of this stupid mask covering its face."
-    "{i}Like come on... all it wants to do is just to eat the goddamn pancakes."
     "{i}\"Stupid communist politicians!\" - it thought to itself - \"How dare they violate my teddy rights like this?\""
     "{i}It wanted to take the mask off, but didn't know how to, and thus, got really really mad."
     hide teddy_one
     show teddy_two at center
-    "{i}It suddenly transformed into a scary looking serial killer teddy, then got up and started running in your direction, screaming \"TAKE THIS MASK OFF OF ME\"."
-    "{i}Before you knew it, it was right on top of you, with its huge right foot hanging in the air right above your face."
+    "{i}It suddenly transformed into a scary looking serial killer teddy. It got up and started running in your direction, screaming \"TAKE THIS MASK OFF OF ME\"."
+    "{i}Before you knew it, it was right on top of you, with its right foot hanging in the air right above your face."
     "{i}It said \"Take this! You left-wing narcissist.\" You didn't have any time to react, all you saw was its huge teddy foot coming down on you... "
+
+    # Music change again
+    stop music
+    play music music_opening fadein 2.0
+
     hide teddy_two
     "{i}And that's when you woke up."
     "{i}Wow... if there's ever any reason to not love those cuddly teddies..."
     "{i}Bringing yourself back to reality, you realise that you have to make a very important decision."
-    player "* Hmmm my Algorithms tutorial starts in 1 minute. I should get the computer... OR, I could go back to sleep. *"
+    player "* Hmmm my Algorithms tutorial starts in 1 minute. I \
+    should get the computer... OR, I could go back to sleep. *"
 
     menu:
         "Go back to sleep":
             player "* Arggh, but I can't ditch 3 classes in a row. Damn it! *"
+
             pass
         "Get the computer":
             pass
+
+    stop music fadeout 5.0
     player "* Welp, it's gonna be a long day. *"
 
     "{i}You open the computer and log in to your online class."
     return
-
 
 #---
 # first scene when joining online class
@@ -213,7 +233,7 @@ label online_class_scene:
         "Well... kinda":
             professor "I see. We're going to have a very friendly chat after class."
         "No sir, I'm very sorry. It won't happen again.":
-            professor "Yeah yeah, same old trick, I've heard enough from you."
+            professor "Yeah yeah, same old trick, I've heard enough from you"
 
     professor "Alright everyone, let's finally start. Today's class is {b}very important{/b}. As you already know, we have already released the project for this semester."
     professor "If you need a quick recap, we're going to make a very basic computer program. You need to implement a polymorphic hash table."
