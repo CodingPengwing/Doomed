@@ -25,6 +25,8 @@ image Josh_room = Image("josh_room.png")
 image Nine_1 = Image("nine_1.jpg")
 
 # Shouko pics
+image Shouko_1 = Image("shouko_1.jpg")
+
 
 # Jessica pics
 
@@ -45,7 +47,7 @@ transform bottom_screen:
     yalign 0.8
 
 transform middle:
-    xalign 0.5
+    xalign 0.1
     yalign 0.5
 
 
@@ -76,6 +78,12 @@ label start:
     $ Nine_joined_team = False
     $ Alistair_joined_team = False
     $ Jessica_joined_team = False
+
+    $ Alistair_mentioned_recipe = False
+    $ Josh_mentioned_guitar = False
+    $ Jessica_mentioned_teddy = False
+    $ Brigette_mentioned_teddy = False
+    $ Shouko_mentioned_teddy = False
 
     call disclaimer_scene
     call intro
@@ -154,7 +162,7 @@ label intro:
     player "* Ah of course, of course, my name is [player_name]... what a dumbass I am. *"
     "{i}As you start to remind yourself of your own name. You also
     realise that you have to make a very important decision."
-    player "* Hmmm my Design of Algorithms tutorial starts in 1 minute. I \
+    player "* Hmmm my Algorithms tutorial starts in 1 minute. I \
     should get the computer... OR, I could go back to sleep. *"
 
     menu:
