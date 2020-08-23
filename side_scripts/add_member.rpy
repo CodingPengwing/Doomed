@@ -63,7 +63,7 @@ label add_Alistair:
         "Your team is already full"
         return
     if Alistair_angry:
-        "Not after what you've said."
+        Alistair "Not after what you've said."
         return
 
     "{i}Alistair joined your team."
