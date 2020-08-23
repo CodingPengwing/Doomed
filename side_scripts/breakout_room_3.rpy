@@ -67,6 +67,7 @@ label b3_ProjectIdeas:
     Jessica "Yikes. You guys suck, I’m out of here."
     "{i}Jessica mutes and turns off her camera.{/i}"
     scene blank                                                                                                         #Jessica turns off camera
+    show Alistair_blank at middle
     $ Jessica_angry = True
     menu:
         "Ah, I’m sorry... that was my fault.":
@@ -97,8 +98,10 @@ label b3_JessGone:
     "..."
     show Alistair_oneC at middle
     "..."
+    scene blank
     show Alistair_oneB at middle
     "..."
+    scene blank
     show Alistair_oneA at middle
     Alistair "If you pick me for your team, I’ll give you some pointers…"
     Alistair "And maybe, just maybe… I’ll reveal my secret recipe."
@@ -151,8 +154,10 @@ label b3_Interested:
     "..."
     show Alistair_oneC at middle
     "..."
+    scene blank
     show Alistair_oneB at middle
     "..."
+    scene blank
     show Alistair_oneA at middle
     "You and Alistair talk about pancakes for a minute."
     Alistair "Anyway, I’ve actually got something related to the class... I think it will help out big time."
@@ -179,8 +184,10 @@ label b3_ImGood:
     "..."
     show Alistair_oneC at middle
     "..."
+    scene blank
     show Alistair_oneB at middle
     "..."
+    scene blank
     show Alistair_oneA at middle
     Alistair "Welp. I’ll see you in class I guess."
     "{i}Alistair mutes and turns off video.{/i}"                                                                                          #ALISTAIR TURN OFF VIDEO
@@ -242,6 +249,8 @@ label b3_BackOnTopic:
     show Jessica_two at top_left_screen                                                                      #JESSICA UNHAPPY (CHANGE PICTURE?)
     "{i}Jessica mutes and turns off camera."
     "{i}Jessica doesn’t want to work with you{/i}"
+    scene blank
+    show Alistair_blank at middle
     $ Jessica_angry = True
     Alistair "Woah. Explosive."
     call b3_JessGone
@@ -282,8 +291,8 @@ label b3_InsultJessica:
     Alistair "I don’t appreciate that."
     $ Alistair_angry = True
     "{i}Alistair leaves the outbreak room{/i}"
+    show blue_screen
     "{i}You think about your actions.{/i}"
     "{i}You regret your actions.{/i}"
-    show blue_screen
     jump b3_end
     return
