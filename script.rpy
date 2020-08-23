@@ -17,31 +17,40 @@ define audio.music_room_two = "audio/room_two.mp3"
 define audio.music_room_three = "audio/room_three.mp3"
 
 # Brigette pics
-image Brigette_one = Image("Brigette_1.jpg")
-image Brigette_oneb = Image("Brigette_1b.jpg")
-image Brigette_two = Image("Brigette_2.jpg")
-image Brigette_twob = Image("Brigette_2b.jpg")
-image Brigette_three = Image("Brigette_3.jpg")
-image Brigette_threeb = Image("Brigette_3b.jpg")
+image Brigette_one = Image("brigette_1.jpg")
+image Brigette_oneb = Image("brigette_1b.jpg")
+image Brigette_two = Image("brigette_2.jpg")
+image Brigette_twob = Image("brigette_2b.jpg")
+image Brigette_three = Image("brigette_3.jpg")
+image Brigette_threeb = Image("brigette_3b.jpg")
 
 # Josh pics
 image Josh_one = Image("josh_1.jpg")
 image Josh_two = Image("josh_2.jpg")
+image Josh_three = Image("josh_3.jpg")
 image Josh_room = Image("josh_room.png")
 
 # Nine pics
 image Nine_one = Image("nine_1.jpg")
+image Nine_two = Image("nine_2.jpg")
 
 # Shouko pics
 image Shouko_one = Image("shouko_1.jpg")
+image Shouko_two = Image("shouko_2.jpg")
+image Shouko_three = Image("shouko_3.jpg")
 
 # Jessica pics
-image Jessica_one = Image("Jessica_1.jpg")
-image Jessica_twoa = Image("Jessica_2a.jpg")
-image Jessica_twob = Image("Jessica_2b.jpg")
+image Jessica_one = Image("jessica_1.jpg")
+image Jessica_two = Image("jessica_2.jpg")
+image Jessica_three = Image("jessica_3.jpg")
+image Jessica_four = Image("jessica_4.jpg")
 
 # Alistair pics
-
+image Alistair_onea = Image("alistair_1a.jpg")
+image Alistair_oneb = Image("alistair_1b.jpg")
+image Alistair_onec = Image("alistair_1c.jpg")
+image Alistair_two = Image("alistair_2.jpg")
+image Alistair_blank = Image("alistair_blank.png")
 
 # Image positions
 transform top_left_screen:
@@ -99,6 +108,10 @@ label start:
     $ Jessica_mentioned_teddy = False
     $ Brigette_mentioned_teddy = False
     $ Shouko_mentioned_teddy = False
+
+    scene transition
+    call test_1
+    call test_2
 
     call artist_statement
     call disclaimer_scene
@@ -312,9 +325,51 @@ label skip_breakout_2:
     "... ... ... ... ... .... ... ..."
     return
 
-#---
-# outro
-label outro:
-    scene bedroom
-    player "Welp... that was an eventful semester. I guess I could do it again."
-    return
+label test_1:
+    call outcome_not_enough_members
+    call outcome_Alistair_and_Jessica
+    call outcome_Brigette_and_Alistair
+    call outcome_Brigette_and_Jessica
+    call outcome_Brigette_and_Nine
+    call outcome_Brigette_and_Shouko
+    call outcome_Josh_and_Alistair
+    call outcome_Josh_and_Brigette
+    call outcome_Josh_and_Jessica
+    call outcome_Josh_and_Nine
+    call outcome_Josh_and_Shouko
+    call outcome_Nine_and_Alistair
+    call outcome_Nine_and_Jessica
+    call outcome_Shouko_and_Alistair
+    call outcome_Shouko_and_Jessica
+    call outcome_Shouko_and_Nine
+
+label test_2:
+    $ Josh_joined_team = True
+    $ Brigette_joined_team = True
+    $ Shouko_joined_team = True
+    $ Nine_joined_team = True
+    $ Alistair_joined_team = True
+    $ Jessica_joined_team = True
+
+    $ Alistair_mentioned_recipe = True
+    $ Josh_mentioned_guitar = True
+    $ Jessica_mentioned_teddy = True
+    $ Brigette_mentioned_teddy = True
+    $ Shouko_mentioned_teddy = True
+
+    call outcome_not_enough_members
+    call outcome_Alistair_and_Jessica
+    call outcome_Brigette_and_Alistair
+    call outcome_Brigette_and_Jessica
+    call outcome_Brigette_and_Nine
+    call outcome_Brigette_and_Shouko
+    call outcome_Josh_and_Alistair
+    call outcome_Josh_and_Brigette
+    call outcome_Josh_and_Jessica
+    call outcome_Josh_and_Nine
+    call outcome_Josh_and_Shouko
+    call outcome_Nine_and_Alistair
+    call outcome_Nine_and_Jessica
+    call outcome_Shouko_and_Alistair
+    call outcome_Shouko_and_Jessica
+    call outcome_Shouko_and_Nine
