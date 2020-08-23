@@ -58,7 +58,7 @@ label end_game:
 
 
 label outcome_Alistair_and_Jessica:
-    $ player_score = "High Distinction"
+    centered "Your score was good - but you could have done better
     return
 
 
