@@ -95,7 +95,7 @@ label outcome_Brigette_and_Shouko:
 
 label outcome_Josh_and_Alistair:
     centered "{b}{size=40}Score: 76{/size}{/b} \n
-    You did great - everyone worked well together
+    You did great - everyone worked well together"
     centred "Your group got along with eachother very well, leading to a great time together"
     centred "You become close friends but only for the semester, quickly drifting apart as there was little common interests"
     centred "You feel the group was definitely solid, but something was definitely missing, something Josh and Alistair didnt have..."
