@@ -266,5 +266,6 @@ label shouko_final_moments:
 label b2_teddybear:
     $ Shouko_mentioned_teddy = True
     Shouko "!"
-    Shouko "Yeah I really like plushies..."                               # SHOUKO BLUSHES
+    Shouko "Yeah I really like teddy bears..."                               # SHOUKO BLUSHES
+    Shouko "They're just so adorable..."
     return
