@@ -62,7 +62,7 @@ transform middle:
 
 transform center:
     xalign 0.5
-    yalign 0.5
+    yalign 0.45
 
 # Backgrounds
 image bedroom = Image("bedroom.jpg")
@@ -70,8 +70,8 @@ image main_room = Image("home_space.png")
 image breakout_transition = Image("transition.jpg")
 image blue_screen = Image("blue_screen.jpg")
 image blank = Solid("#000000")
-image teddy_one = Image("teddy_one.jpg")
-image teddy_two = Image("teddy_two.jpg")
+image teddy_one = Image("teddy_one.png")
+image teddy_two = Image("teddy_two.png")
 
 
 #-----
@@ -99,7 +99,7 @@ label start:
     $ Jessica_mentioned_teddy = False
     $ Brigette_mentioned_teddy = False
     $ Shouko_mentioned_teddy = False
-    
+
     call artist_statement
     call disclaimer_scene
     call intro
@@ -171,8 +171,8 @@ label artist_statement:
     Most of the visual elements presented in this visual novel were self-produced, with a few exceptions being listed in the \"About\" section from the menu.\n
     We would like to give very special thanks to our friend Crystal Li for allowing us to feature her amazing artworks in our story. Without her contributions, we would not have any product to offer... it would have been truely doomed."
     return
-    
-    
+
+
 
 #---
 # disclaimer for the product
@@ -199,6 +199,7 @@ label intro:
     player "* Ah of course, of course, my name is [player_name]... what a dumbass I am. *"
     "{i}As you remind yourself of your own name. You also start to remember that weird dream you had last night."
     player "* Hmmm, I must've been {b}that{/b} tired huh? That was one of the weirdest dreams I've ever had. *"
+    scene blank
     "{i}As always, it takes a while for the entire dream to come back, but it starts with you walking down the supermarket isle, with your surgical mask on of course."
     "{i}Doing the groceries is pretty much a contactless sport nowadays, you try to steer clear of everyone. Wouldn't want to get Covid-19, that would be ugly."
     show teddy_one at center
@@ -223,6 +224,7 @@ label intro:
     play music music_opening fadein 2.0
 
     hide teddy_two
+    show bedroom
     "{i}And that's when you woke up."
     "{i}Wow... if there's ever any reason to not love those cuddly teddies..."
     "{i}Bringing yourself back to reality, you realise that you have to make a very important decision."
