@@ -60,7 +60,9 @@ label breakout_room_2:
     menu:
         "Yeah for sure!":
             Nine "Nice! Looking forward to it!"
-            "(Shouko leaves the meeting)"                 # E N D     - TEAM MATE ACQUIRED - NINE
+            "(Shouko has left the room)"                 # E N D     - TEAM MATE ACQUIRED - NINE
+            scene blank
+            show Nine_1 at middle
             call add_Nine
             jump b2_end
 
@@ -100,39 +102,6 @@ label b2_end:
             "No":
                 pass
 
-    # if (num_team_members < 2):
-    #     if not Nine_joined_team:
-    #         menu:
-    #             "Will you invite Nine-One to join your team?"
-    #             "Yes":
-    #                 if Nine_angry:
-    #                     "Nine declined your invitation."
-    #                     show Nine_1 at middle
-    #                     Nine "F**k off bro."                      # NINE INDIVIDUAL SHOT
-    #                     scene blank
-    #                 else:
-    #                     $ num_team_members += 1
-    #                     $ Nine_joined_team = True
-    #                     "Nine accepted your invitation."
-    #                     "Successfully acquired a new teammate!"
-    #                 pass
-    #             "No":
-    #                 pass
-    # if (num_team_members < 2):
-    #     if not Shouko_joined_team:
-    #         menu:
-    #             "Will you invite Shouko to join your team?"
-    #             "Yes":
-    #                 if Shouko_angry:
-    #                     "Shouko declined your invitation"
-    #                 else:
-    #                     $ num_team_members += 1
-    #                     $ Shouko_joined_team = True
-    #                     "Shouko accepted your invitation"
-    #                     "Successfully acquired a new teammate!"
-    #                 pass
-    #             "No":
-    #                 pass
     return
 
 label MissMute:
@@ -166,6 +135,7 @@ label PromptSpeak:
             pass
     Nine "So anyways..."
     return
+
 label shouko_message1:
     centered "{i}You have (1) new messages"
     centered "Shouko: Thanks for talking to me! That really made me feel appreciated (> <)"
@@ -208,7 +178,9 @@ label Idontknow:
             Nine "REALLY"
             Nine "HIGH"
             Nine "DEMAND"
-            "(Nine leaves the room)"                      # NINE LEAVES
+            "(Nine has left the room)"                      # NINE LEAVES
+            scene blank
+            show Shouko_1 at middle
             pass
         "You seem like kinda a shitty person...":
             call nine_be_angry
@@ -218,7 +190,9 @@ label Idontknow:
 label nine_be_angry:
     $ Nine_angry = True
     Nine "{cps=*3}What the fuck did you just fucking say about me, you little bitch? I’ll have you know I graduated top of my class in the Navy Seals, and I’ve been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I’m the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fuckin-{/cps}"
-    "(Nine leaves the room)"                              # NINE LEAVES
+    scene blank
+    show Shouko_1 at middle
+    "(Nine has left the room)"                              # NINE LEAVES
     return
 
 label shouko_final_moments:
@@ -233,7 +207,8 @@ label shouko_final_moments:
             Shouko "?!"
             Shouko "Am I not supposed to be?"
             Shouko "..."
-            "(Shouko leaves the call)"                   # E N D --- SHOUKO LEAVES
+            scene blank
+            "(Shouko has left the room)"                   # E N D --- SHOUKO LEAVES
             $ Shouko_angry = True
             return
             pass
@@ -247,8 +222,7 @@ label shouko_final_moments:
             pass
         "It was fun talking to you!":
             pass
-
-                                                                 # SHOUKO BLUSHES
+    # SHOUKO BLUSHES
 
     Shouko "I just wanted to warn you about Nine."
     Shouko "Thanks for believing me."
@@ -284,6 +258,4 @@ label shouko_final_moments:
             pass
         "See you!":
             pass
-
-    "(Shouko leaves the room)"                            # SHOUKO LEAVES
     return
