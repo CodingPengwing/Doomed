@@ -176,28 +176,26 @@ label intro:
     "{i}It was wearing a huge mask too, but it was very annoyed that it had to do so in public."
     "{i}It thought that it was its own teddy right to be free from any social restraints in the name of \"safety\"."
     "{i}It was pissed, ohhh so pissed, it had a pancake on its left hand that it couldn't eat, all because of this stupid mask covering its face."
+    "{i}Like come on... all it wants to do is just to eat the goddamn pancakes."
     "{i}\"Stupid communist politicians!\" - it thought to itself - \"How dare they violate my teddy rights like this?\""
     "{i}It wanted to take the mask off, but didn't know how to, and thus, got really really mad."
     hide teddy_one
     show teddy_two at center
-    "{i}It suddenly transformed into a scary looking serial killer teddy. It got up and started running in your direction, screaming \"TAKE THIS MASK OFF OF ME\"."
-    "{i}Before you knew it, it was right on top of you, with its right foot hanging in the air right above your face."
+    "{i}It suddenly transformed into a scary looking serial killer teddy, then got up and started running in your direction, screaming \"TAKE THIS MASK OFF OF ME\"."
+    "{i}Before you knew it, it was right on top of you, with its huge right foot hanging in the air right above your face."
     "{i}It said \"Take this! You left-wing narcissist.\" You didn't have any time to react, all you saw was its huge teddy foot coming down on you... "
     hide teddy_two
     "{i}And that's when you woke up."
     "{i}Wow... if there's ever any reason to not love those cuddly teddies..."
     "{i}Bringing yourself back to reality, you realise that you have to make a very important decision."
-    player "* Hmmm my Algorithms tutorial starts in 1 minute. I \
-    should get the computer... OR, I could go back to sleep. *"
+    player "* Hmmm my Algorithms tutorial starts in 1 minute. I should get the computer... OR, I could go back to sleep. *"
 
     menu:
         "Go back to sleep":
             player "* Arggh, but I can't ditch 3 classes in a row. Damn it! *"
-
             pass
         "Get the computer":
             pass
-
     player "* Welp, it's gonna be a long day. *"
 
     "{i}You open the computer and log in to your online class."
