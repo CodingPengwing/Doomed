@@ -9,26 +9,28 @@ define Jessica = Character("Jessica Kim", color = "#44DDDD")
 define professor = Character("Professor X", color = "#44DDDD")
 
 # Brigette pics
-image Brigette_1 = Image("Brigette_1.jpg")
-image Brigette_1b = Image("Brigette_1b.jpg")
-image Brigette_2 = Image("Brigette_2.jpg")
-image Brigette_2b = Image("Brigette_2b.jpg")
-image Brigette_3 = Image("Brigette_3.jpg")
-image Brigette_3b = Image("Brigette_3b.jpg")
+image Brigette_one = Image("Brigette_1.jpg")
+image Brigette_oneb = Image("Brigette_1b.jpg")
+image Brigette_two = Image("Brigette_2.jpg")
+image Brigette_twob = Image("Brigette_2b.jpg")
+image Brigette_three = Image("Brigette_3.jpg")
+image Brigette_threeb = Image("Brigette_3b.jpg")
 
 # Josh pics
-image Josh_1 = Image("josh_1.jpg")
-image Josh_2 = Image("josh_2.jpg")
+image Josh_one = Image("josh_1.jpg")
+image Josh_two = Image("josh_2.jpg")
 image Josh_room = Image("josh_room.png")
 
 # Nine pics
-image Nine_1 = Image("nine_1.jpg")
+image Nine_one = Image("nine_1.jpg")
 
 # Shouko pics
-image Shouko_1 = Image("shouko_1.jpg")
-
+image Shouko_one = Image("shouko_1.jpg")
 
 # Jessica pics
+image Jessica_one = Image("Jessica_1.jpg")
+image Jessica_twoa = Image("Jessica_2a.jpg")
+image Jessica_twob = Image("Jessica_2b.jpg")
 
 # Alistair pics
 
@@ -226,8 +228,8 @@ label player_instructions:
 # Breakout 1 skip scene
 label skip_breakout_1:
     scene blank
-    show Josh_1 at top_left_screen
-    show Brigette_1b at top_right_screen
+    show Josh_one at top_left_screen
+    show Brigette_oneb at top_right_screen
     "... ... ... ..."
     Josh "... hehe, check out this cool guitar ...."
     Brigette "... yeah it's so cool... almost as cool as... you ..."
@@ -238,8 +240,8 @@ label skip_breakout_1:
 # Breakout 2 skip scene
 label skip_breakout_2:
     scene blank
-    show Nine_1 at top_left_screen
-    show Shouko_1 at top_right_screen
+    show Nine_one at top_left_screen
+    show Shouko_one at top_right_screen
     "... ... ... ..."
     Nine "... yeah I'm cool like that ...."
     Shouko "...    ..."
