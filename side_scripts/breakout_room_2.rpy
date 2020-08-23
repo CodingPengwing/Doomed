@@ -60,12 +60,10 @@ label breakout_room_2:
     menu:
         "Yeah for sure!":
             Nine "Nice! Looking forward to it!"
-            $ num_team_members += 1
-            $ Nine_joined_team = True
             "(Shouko leaves the meeting)"                 # E N D     - TEAM MATE ACQUIRED - NINE
-            "{i}You have acquired a team member"
-
+            add_Nine
             jump b2_end
+
             pass
         "I don't know...":
             call Idontknow
@@ -84,21 +82,23 @@ label b2_end:
     scene blank
     centered "{i}The Outbreak room has ended."
 
-    menu:
-        "Will you invite Nine-One to join your team?"
-        "Yes":
-            call add_Nine
-            pass
-        "No":
-            pass
+    if not Nine_joined_team:
+        menu:
+            "Will you invite Nine-One to join your team?"
+            "Yes":
+                call add_Nine
+                pass
+            "No":
+                pass
 
-    menu:
-        "Will you invite Shouko to join your team?"
-        "Yes":
-            call add_Nine
-            pass
-        "No":
-            pass
+    if not Shouko_joined_team:
+        menu:
+            "Will you invite Shouko to join your team?"
+            "Yes":
+                call add_Shouko
+                pass
+            "No":
+                pass
 
     # if (num_team_members < 2):
     #     if not Nine_joined_team:
@@ -128,7 +128,7 @@ label b2_end:
     #                 else:
     #                     $ num_team_members += 1
     #                     $ Shouko_joined_team = True
-    #                     "Shouko accepted your invitation."
+    #                     "Shouko accepted your invitation"
     #                     "Successfully acquired a new teammate!"
     #                 pass
     #             "No":
