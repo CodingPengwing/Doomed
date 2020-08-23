@@ -99,16 +99,31 @@ label outcome_Josh_and_Nine:
     return
 
 label outcome_Josh_and_Shouko:
-    $ player_score = "High on Drugs"
+    if Shouko_mentioned_teddy and Josh_mentioned_guitar
+         centered "{b}{size=40}Score: 80{/size}{/b} \n
+         You did very well - there was a really good group environment"
+         centred "You become quite close with both Josh and Shouko, and Josh even teaches both of you to play guitar!"
+         centred "The group work was very efficient, almost felt as if Shouko's teddy was helping out too"
+    else
+        centered "{b}{size=40}Score: 73{/size}{/b} \n
+        You did well - everyone had a good time"
+        centred "You three become friends but nothing special happens"
+        centred "You feel like there was something missing"
     return
 
 
 label outcome_Nine_and_Alistair:
-    $ player_score = "High on Drugs"
+    centered "{b}{size=40}Score: 56{/size}{/b} \n
+    Your score wasn\'t incredible but at least you passed - your group did not get along well"
+    centred "Nine was extremely insistent on cheating but Alistair convinced him not to. You did the projects without Nine making it difficult"
+    centred "You merely stay tutorial friends with Alistair and dont really interact with Nine at all"
     return
 
 label outcome_Nine_and_Jessica:
-    $ player_score = "High on Drugs"
+    centered "{b}{size=40}Score: 0{/size}{/b} \n
+    Your score was really good but... you were caught cheating - the group also struggled to do work together"
+    centred "You become extremely close with Nine and Jessica. Both you and Nine become addicted to partying along with Jessica. \n
+    You drop out of University to party and live off Nine. You really enjoy your life"
     return
 
 
@@ -120,7 +135,10 @@ label outcome_Shouko_and_Alistair:
         centred "The group becomes lifelong friends, and you push each other to pursure their dreams"
         centred "You feel incredibly happy"
     else
-        centered "{b}{size=40}Score: 80{/size}{/b} \n"
+        centered "{b}{size=40}Score: 80{/size}{/b} \n
+        You did very well  - enjoyed working together"                                                                                                                   #kinda boring
+        centred "Alistair did a lot of the work and even taught both you and Shouko a few tricks. You remain friends with them but only temporarily. \n
+        While you scored well, you just feel like you missed something important ... also I wonder why Alistair didn't have his camera on"
     return
 
 label outcome_Shouko_and_Jessica:
@@ -138,8 +156,9 @@ label outcome_Shouko_and_Jessica:
 
 label outcome_Shouko_and_Nine:
     centered "{b}{size=40}Score: 0{/size}{/b} \n
-    Your score was really good - but... you were caught cheating"
+    Your score was really good but... you were caught cheating - Nine is irritated and Shouko is very unhappy"
     centered "Nine ended up blaming you and Shouko for cheating, and Shouko now has trust issues. \n 
-    Unfortunately, you recieve an \'at risk\' email, and must speak university representatives. You eventually lose grip of university and leave. \n
-    You now also have trust issues"
+    Shouko stayed very silent throughout the whole project, almost as silent as her teddy"
+    Unfortunately, you recieve an \'at risk\' email, and must speak university representatives. You eventually lose grip of university and leave."
+    centred "You now also have trust issues"
     return
