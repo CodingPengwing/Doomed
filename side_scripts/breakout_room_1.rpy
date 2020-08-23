@@ -217,8 +217,8 @@ label b1_cutoff:
     Brigette "{size=-12}Jerk.{/size}"
 
     scene blank
+    "{i}Brigette has left the outbreak room."
     show Josh_room at middle
-    "{i}Brigette has left the room."
     "..."
 
     $ Brigette_angry = True
@@ -270,7 +270,7 @@ label b1_coolguitar:
             Josh "That’s real fucked up man."
             $ Josh_angry = True
             scene blank
-            "{i}Josh has left the room."
+            "{i}Josh has left the outbreak room."
             call b1_end                                                 #END
 
     return
