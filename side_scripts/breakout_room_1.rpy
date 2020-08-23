@@ -28,7 +28,7 @@ label breakout_room_1:
     show Brigette_1 at top_right_screen
 
     "You are last to join."
-    "The two stangers are already talking."
+    "The two strangers are already talking."
 
     menu:
         "Hey! How are you guys doing?":
