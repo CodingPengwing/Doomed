@@ -123,7 +123,7 @@ label start:
     centered "You are being moved to outbreak group 3"
     centered "Guess you're going to join the conversation this time... instead of being a mannequin."
     call breakout_room_3
-    call endgame
+    call end_game
 
     # finish
     return
