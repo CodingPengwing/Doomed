@@ -16,7 +16,6 @@ label breakout_room_3:
         call b3_JessGone
     else:
         call b3_JessStay
-
     return
 
 label b3_HopefullyOtherGuyJoins:
@@ -216,6 +215,7 @@ label b3_Mask:
     "{i}Jessica disappears but quickly returns to her seat, now wearing a mask.{/i}"                           
     # Show Jessica_3 at top_left                                                                                     # JESSICA NEEDS A MASK HERE  
     Jessica "Check it out."
+    $ Jessica_showed_mask = True;
     Alistair "Damn, that's pretty cool!"
     Jessica "Right?? Look at this one too!"  
     "{i}Jessica swaps out her mask to another design.{/i}"
