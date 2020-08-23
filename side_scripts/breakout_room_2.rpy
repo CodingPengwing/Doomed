@@ -1,8 +1,8 @@
 label breakout_room_2:
     $ shouko_message = False
     scene blank
-    show Nine_1 at top_left_screen
-    show Shouko_1 at top_right_screen
+    show Nine_one at top_left_screen
+    show Shouko_one at top_right_screen
 
     "You are last to join, no one seems to be talking. The girl appears to be on mute."
     Nine "Finally someone else is here!"
@@ -62,7 +62,7 @@ label breakout_room_2:
             Nine "Nice! Looking forward to it!"
             "(Shouko has left the room)"                 # E N D     - TEAM MATE ACQUIRED - NINE
             scene blank
-            show Nine_1 at middle
+            show Nine_one at middle
             call add_Nine
             jump b2_end
 
@@ -180,7 +180,7 @@ label Idontknow:
             Nine "DEMAND"
             "(Nine has left the room)"                      # NINE LEAVES
             scene blank
-            show Shouko_1 at middle
+            show Shouko_one at middle
             pass
         "You seem like kinda a shitty person...":
             call nine_be_angry
@@ -191,7 +191,7 @@ label nine_be_angry:
     $ Nine_angry = True
     Nine "{cps=*3}What the fuck did you just fucking say about me, you little bitch? I’ll have you know I graduated top of my class in the Navy Seals, and I’ve been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I’m the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fuckin-{/cps}"
     scene blank
-    show Shouko_1 at middle
+    show Shouko_one at middle
     "(Nine has left the room)"                              # NINE LEAVES
     return
 
