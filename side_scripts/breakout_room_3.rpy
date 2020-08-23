@@ -1,5 +1,4 @@
 label breakout_room_3:
-    play music music_room_three fadein 10.0 loop
     scene blank
     "You are the first to join, Jessica connects shortly after with camera and mic on."
 
@@ -21,8 +20,8 @@ label breakout_room_3:
     return
 
 label b3_HopefullyOtherGuyJoins:
-    Jessica "Yeah, I’ve got something for you guys when he joins."
-    "{i}Alistair joins muted and without his camera on, but he turns on his mic shortly after.{/i}"
+    Jessica "Yeah, I’ve got something for you guys when he joins."  
+    "{i}Alistair joins muted and without his camera on, but he turns on his mic shortly after.{/i}" 
     Alistair "Sorry I joined late, what's happening?"
     menu:
         "No worries, I think Jessica wants to tell us something.":
@@ -40,10 +39,10 @@ label b3_NoWorries:
 
 label b3_Waiting:
     Alistair "Ahhh… I just had some issues. I’m really sorry."
-    # Show Jessica_unhappy at top_left
+    # Show Jessica_two at top_left
     Jessica "He already apologised, what do you want from him?"                                                                                 # Jessica uncomfortable (change expression?)
-    "..."
-    # Show Jessica_default at top_left                                                                                                                              # return to Jessica default expression
+    "..." 
+    # Show Jessica_one at top_left                                                                                                                              # return to Jessica default expression
     Jessica "Anyways…"
     return
 
@@ -54,13 +53,12 @@ label b3_ProjectIdeas:
     Jessica "Can you believe [player_name]? They want to talk about the project… how lame."
     player "I-"
     Alistair "Ahh there’s nothing wrong with that! Maybe we should talk about it."
-    # Show  Jessica_unhappy at top_left                                                                                                       #Jessica unhappy (change expression?)
+    # Show  Jessica_two at top_left                                                                                                       #Jessica unhappy (change expression?)
     Jessica "You too?? ... I can’t believe you guys."
     "Alistair and Jessica go back and forth for a minute."
     Jessica "Yikes. You guys suck, I’m out of here."
-    # scene blank
-    "(Jessica has left the outbreak room.)"
-    # Show  Alistair_default at middle                                                                                                           #Jessica turns off camera
+    "{i}Jessica mutes and turns off her camera.{/i}" 
+    # scene blank                                                                                                         #Jessica turns off camera
     $ Jessica_angry = True
     menu:
         "Ah, I’m sorry... that was my fault.":
@@ -83,8 +81,17 @@ label b3_JessGone:
             pass
     "You hear some sounds of metal clanking."
     "{i}Alistair turns on his camera, revealing Alistair in his kitchen.{/i}"
-    # Show  Alistair_default at middle                                                                                                          #Alistair turns on camera (are we making his pancake flip?)
+    # Show  Alistair_oneA at top_right                                                                                                          #Alistair turns on camera (are we making his pancake flip?)
     Alistair "Yo. I’m making some pancakes."
+    show Alistair_oneA
+    "..."
+    show Alistair_oneB
+    "..."
+    show Alistair_oneC
+    "..."
+    show Alistair_oneB
+    "..."
+    show Alistair_oneA
     Alistair "If you pick me for your team, I’ll give you some pointers…"
     Alistair "And maybe, just maybe… I’ll reveal my secret recipe."
     menu:
@@ -100,16 +107,13 @@ label b3_WhyCooking:
     Alistair "Ahh, come on man! You really don’t understand do you?"
     Alistair "Kinda a pity. Don’t worry about it."
     "{i}Alistair seems disappointed.{/i}"
-    # Show  Alistair_unhappy at middle                                                                                                                # Alistair unhapppy
+    # Show  Alistair_two                                                                                                                  # Alistair unhapppy 
     Alistair "Guess I can’t blame you for wanting to stay on track. I guess we can talk about the project."
     player "Let’s get back on topic then!"
     "{i}You and Alistair talk about the subject for the last few remaining minutes. {/i}"
     jump b3_end
 
 label b3_end:
-    stop music fadeout 5.0
-    scene transition
-    centered "{i}The Outbreak room has ended."
     if not Alistair_joined_team:
         menu:
             "Will you invite Alistair to join your team?"
@@ -130,6 +134,15 @@ label b3_end:
 
 label b3_Interested:
     Alistair "Now that’s what I’m talking about"
+    show Alistair_oneA
+    "..."
+    show Alistair_oneB
+    "..."
+    show Alistair_oneC
+    "..."
+    show Alistair_oneB
+    "..."
+    show Alistair_oneA
     "You and Alistair talk about pancakes for a minute."
     Alistair "Anyway, I’ve actually got something related to the class... I think it will help out big time."
     Alistair "But! I can only show you if you work with me though."
@@ -149,9 +162,17 @@ label b3_Interested:
     return
 
 label b3_ImGood:
+    show Alistair_oneA
+    "..."
+    show Alistair_oneB
+    "..."
+    show Alistair_oneC
+    "..."
+    show Alistair_oneB
+    "..."
+    show Alistair_oneA
     Alistair "Welp. I’ll see you in class I guess."
-    #scene blank
-    "(Alistair has left the outbreak room.){/i}"                                                                                          #ALISTAIR TURN OFF VIDEO
+    "{i}Alistair mutes and turns off video.{/i}"                                                                                          #ALISTAIR TURN OFF VIDEO
     jump b3_end
     return
 
@@ -159,15 +180,15 @@ label b3_FoundMembers:
     Alistair "Ah... you realise this is a room to find group members right?"
     player "Yikes, I missed that part of the instructions…"
     Alistair "Welp. I’ll see you in class I guess."
-    # Show Alistair_unhappy at middle                                                                                        #ALISTAIR UNHAPPY (change picture?)
-    $ Alistair_angry = True
-    # scene blank
-    "(Alistair has left the outbreak room.)"                                                                                        # ALISTAIR TURN OFF VIDEO ??
+    # Show Alistair_two at top_right                                                                                        #ALISTAIR UNHAPPY (change picture?)
+    "{i}Alistair does not want to work with you.{/i}"
+    $ Alistair_angry = true
+    "{i}Alistair mutes and turns off video.{/i}"                                                                                                     # ALISTAIR TURN OFF VIDEO ??
     jump b3_end
     return
 
 label b3_TeamUp:
-    call add_Alistair
+    call add_Alistair                                                               
     Alistair "Alright, give me a second."
     "{i}Alistair sends a link.{/i}"
     Alistair "I present… detailed notes for the whole class!"
@@ -205,12 +226,11 @@ label b3_JessStay:
     return
 
 label b3_BackOnTopic:
-    Jessica "Really…? You're just gonna to interrupt me with your boring project?"
-    Jessica "Yikes, I’m outta here."
-    # Show Jessica_unhappy at top_left                                                                      #JESSICA UNHAPPY (CHANGE PICTURE?)
-    # scene blank
-    "(Jessica has left the outbreak room.)"
-
+    Jessica "Really…? You're just gonna to interrupt me with your boring project?"                             
+    Jessica "Yikes, I’m outta here."         
+    # Show Jessica_two at top_left                                                                      #JESSICA UNHAPPY (CHANGE PICTURE?)
+    "Jessica mutes and turns off camera."
+    "{i}Jessica doesn’t want to work with you{/i}" 
     $ Jessica_angry = True
     Alistair "Woah. Explosive."
     call b3_JessGone
@@ -219,15 +239,15 @@ label b3_BackOnTopic:
 label b3_Mask:
     Jessica "Yeah! I actually make them myself, let me show you some of my designs."
     Jessica "If there’s any you like, check out my website! I’ll hook you guys up with a discount too."
-    "{i}Jessica disappears but quickly returns to her seat, now wearing a mask.{/i}"
-    # Show Jessica_3 at top_left                                                                                     # JESSICA NEEDS A MASK HERE
+    "{i}Jessica disappears but quickly returns to her seat, now wearing a mask.{/i}"                           
+    # Show Jessica_three at top_left                                                                                     # JESSICA NEEDS A MASK HERE  
     Jessica "Check it out."
     Jessica "I like to make my teddy bear wear my masks"
     $ Jessica_mentioned_teddy = True
     Alistair "Damn, that's pretty cool!"
-    Jessica "Right?? Look at this one too!"
+    Jessica "Right?? Look at this one too!"  
     "{i}Jessica swaps out her mask to another design.{/i}"
-    # Show Jessica_4 at top_left                                                                                     #CHANGE MASK FOR JESSICA
+    # Show Jessica_four at top_left                                                                                     #CHANGE MASK FOR JESSICA                          
     Jessica "I’ll link you guys my {i}stangram{/i}, I’ve got more there"
     menu:
         "Damn, that's really cool!":
@@ -241,19 +261,16 @@ label b3_Mask:
     return
 
 label b3_InsultJessica:
-    Jessica "… Seriously? That’s all you have to say? What an asshole."
-    # Show Jessica_unhappy at top_left                                                                        # Change expression for Jessica (unhappy)
+    Jessica "… Seriously? That’s all you have to say? What an asshole."            
+    # Show Jessica_two at top_left                                                                        # Change expression for Jessica (unhappy)
+    "{i}Jessica leaves the outbreak room.{/i}"
     # scene blank
-    "(Jessica has left the outbreak roon.)"
-    # Show Alistair_1 at middle
     $ Jessica_angry = True
     Alistair "Hey man. That wasn’t nice."
     "..."
-    # Show Alistair_unhappy at middle                                                                         # Change expression for Alistair
-    Alistair "I don’t appreciate that."
-    $ Alistair_angry = True
-    # scene blank
-    "(Alistair has left the outbreak room)"
+    Alistair "I don’t appreciate that."   
+    $ Alistair_angry = True    
+    "{i}Alistair leaves the outbreak room{/i}"
     "{i}You think about your actions.{/i}"
     "{i}You regret your actions.{/i}"
     show blue_screen
@@ -264,10 +281,10 @@ label b3_InsultJessica:
 
 #PICTURES NEEDED
 #Jessica:
-#       Jessica_default
-#       Jessica_unhappy
-#       Jessica_mask1
-#       Jessica_mask2
+#       Jessica_one
+#       Jessica_two
+#       Jessica_three
+#       Jessica_four
 #Alistair:
-#       Alistair_default (flipping pancake so 2/3 pictures??)
+#       Alistair_oneA (flipping pancake so 2/3 pictures??)
 #       Alistair_unhappy
