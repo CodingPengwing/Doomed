@@ -165,6 +165,7 @@ label b3_TeamUp:
     Alistair "Alright, give me a second."
     "{i}Alistair sends a link.{/i}"
     Alistair "I present… detailed notes for the whole class!"
+    $ Alistair_shared_recipe = True
     player "Woah."
     Alistair "I like working with people who aren’t just work-oriented."
     Alistair "You all seem fun… I’m looking forward to working together!"
