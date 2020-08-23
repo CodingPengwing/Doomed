@@ -164,7 +164,7 @@ label b3_TeamUp:
     Alistair "Alright, give me a second."
     "{i}Alistair sends a link.{/i}"
     Alistair "I present… detailed notes for the whole class!"
-    $ Alistair_shared_recipe = True
+    $ Alistair_mentioned_recipe = True
     player "Woah."
     Alistair "I like working with people who aren’t just work-oriented."
     Alistair "You all seem fun… I’m looking forward to working together!"
@@ -215,7 +215,7 @@ label b3_Mask:
     "{i}Jessica disappears but quickly returns to her seat, now wearing a mask.{/i}"                           
     # Show Jessica_3 at top_left                                                                                     # JESSICA NEEDS A MASK HERE  
     Jessica "Check it out."
-    $ Jessica_showed_mask = True;
+    $ Jessica_mentioned_mask = True;
     Alistair "Damn, that's pretty cool!"
     Jessica "Right?? Look at this one too!"  
     "{i}Jessica swaps out her mask to another design.{/i}"
