@@ -91,11 +91,23 @@ label outcome_Josh_and_Brigette:
     return
 
 label outcome_Josh_and_Jessica:
-    $ player_score = "High Distinction"
+    if Jessica_mentioned_teddy and Josh_mentioned_guitar
+        centered "{b}{size=40}Score: 80{/size}{/b} \n
+        You did very well - the group environment was ok"
+        centred "Although initially it seemed like you were bound for a bad score..."
+        centred "You somehow pull through, and all become good friends"
+        centred "It was almost as if Jessica's teddy helped out"
+    else 
+        centered "{b}{size=40}Score: 62{/size}{/b} \n
     return
 
 label outcome_Josh_and_Nine:
-    $ player_score = "High on Drugs"
+    centered "{b}{size=40}Score: 0{/size}{/b} \n
+    Your score was really good but... you were caught cheating - the group was a disaster"
+    centred "No one got along with eachother well, you do the project yourself only to have Nine submit his own work"
+    centred "Nine tells Josh you were the reason they failed and Josh now hates you"
+    centred "Turns out Nine really is just all talk and is just a cheater"
+    centred "You are unhappy"
     return
 
 label outcome_Josh_and_Shouko:
