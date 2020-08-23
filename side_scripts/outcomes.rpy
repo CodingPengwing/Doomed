@@ -58,7 +58,10 @@ label end_game:
 
 
 label outcome_Alistair_and_Jessica:
-    centered "Your score was good - but you could have done better
+    centered "{b}{size=40}Score: 70 \n
+    Your score was good - but you feel like you could have done better."
+    centered "Alistair ended up becoming your best friend and Jessica invited you to a lot of parties. \n Unfortunately, you start to become addicted to pancakes and also get drawn into the party life. You eventually lose grip of university and decide to be a dessert chef. \n
+    But if you could do it again... who knows, maybe you could've gotten 100."
     return
 
 
