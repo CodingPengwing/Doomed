@@ -30,6 +30,9 @@ label add_Nine:
         return
     if Nine_angry:
         "You pissed off Nine, looks like he doesn't want to join your team..."
+        show Nine_1 at middle
+        Nine "F**k off mate."
+        scene blank
         return
 
     "{i}Nine joined your team."
