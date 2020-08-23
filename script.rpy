@@ -109,10 +109,6 @@ label start:
     $ Brigette_mentioned_teddy = False
     $ Shouko_mentioned_teddy = False
 
-    scene transition
-    call test_1
-    call test_2
-
     call artist_statement
     call disclaimer_scene
     call intro
@@ -324,52 +320,3 @@ label skip_breakout_2:
     Shouko "...    ..."
     "... ... ... ... ... .... ... ..."
     return
-
-label test_1:
-    call outcome_not_enough_members
-    call outcome_Alistair_and_Jessica
-    call outcome_Brigette_and_Alistair
-    call outcome_Brigette_and_Jessica
-    call outcome_Brigette_and_Nine
-    call outcome_Brigette_and_Shouko
-    call outcome_Josh_and_Alistair
-    call outcome_Josh_and_Brigette
-    call outcome_Josh_and_Jessica
-    call outcome_Josh_and_Nine
-    call outcome_Josh_and_Shouko
-    call outcome_Nine_and_Alistair
-    call outcome_Nine_and_Jessica
-    call outcome_Shouko_and_Alistair
-    call outcome_Shouko_and_Jessica
-    call outcome_Shouko_and_Nine
-
-label test_2:
-    $ Josh_joined_team = True
-    $ Brigette_joined_team = True
-    $ Shouko_joined_team = True
-    $ Nine_joined_team = True
-    $ Alistair_joined_team = True
-    $ Jessica_joined_team = True
-
-    $ Alistair_mentioned_recipe = True
-    $ Josh_mentioned_guitar = True
-    $ Jessica_mentioned_teddy = True
-    $ Brigette_mentioned_teddy = True
-    $ Shouko_mentioned_teddy = True
-
-    call outcome_not_enough_members
-    call outcome_Alistair_and_Jessica
-    call outcome_Brigette_and_Alistair
-    call outcome_Brigette_and_Jessica
-    call outcome_Brigette_and_Nine
-    call outcome_Brigette_and_Shouko
-    call outcome_Josh_and_Alistair
-    call outcome_Josh_and_Brigette
-    call outcome_Josh_and_Jessica
-    call outcome_Josh_and_Nine
-    call outcome_Josh_and_Shouko
-    call outcome_Nine_and_Alistair
-    call outcome_Nine_and_Jessica
-    call outcome_Shouko_and_Alistair
-    call outcome_Shouko_and_Jessica
-    call outcome_Shouko_and_Nine
