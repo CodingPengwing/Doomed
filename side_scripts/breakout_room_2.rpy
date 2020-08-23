@@ -61,7 +61,7 @@ label breakout_room_2:
         "Yeah for sure!":
             Nine "Nice! Looking forward to it!"
             "(Shouko leaves the meeting)"                 # E N D     - TEAM MATE ACQUIRED - NINE
-            add_Nine
+            call add_Nine
             jump b2_end
 
             pass
