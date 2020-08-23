@@ -57,8 +57,8 @@ label b3_ProjectIdeas:
     Jessica "You too?? ... I can’t believe you guys."
     "Alistair and Jessica go back and forth for a minute."
     Jessica "Yikes. You guys suck, I’m out of here."
-    "{i}Jessica mutes and turns off her camera.{/i}" 
     # scene blank 
+    "(Jessica has left the outbreak room.)" 
     # Show  Alistair_default at middle                                                                                                           #Jessica turns off camera
     $ Jessica_angry = True
     menu:
@@ -82,7 +82,7 @@ label b3_JessGone:
             pass
     "You hear some sounds of metal clanking."
     "{i}Alistair turns on his camera, revealing Alistair in his kitchen.{/i}"
-    # Show  Alistair_default at top_right                                                                                                          #Alistair turns on camera (are we making his pancake flip?)
+    # Show  Alistair_default at middle                                                                                                          #Alistair turns on camera (are we making his pancake flip?)
     Alistair "Yo. I’m making some pancakes."
     Alistair "If you pick me for your team, I’ll give you some pointers…"
     Alistair "And maybe, just maybe… I’ll reveal my secret recipe."
@@ -99,7 +99,7 @@ label b3_WhyCooking:
     Alistair "Ahh, come on man! You really don’t understand do you?"
     Alistair "Kinda a pity. Don’t worry about it."
     "{i}Alistair seems disappointed.{/i}"
-    # Show  Alistair_unhappy                                                                                                                    # Alistair unhapppy 
+    # Show  Alistair_unhappy at middle                                                                                                                # Alistair unhapppy 
     Alistair "Guess I can’t blame you for wanting to stay on track. I guess we can talk about the project."
     player "Let’s get back on topic then!"
     "{i}You and Alistair talk about the subject for the last few remaining minutes. {/i}"
@@ -146,7 +146,8 @@ label b3_Interested:
 
 label b3_ImGood:
     Alistair "Welp. I’ll see you in class I guess."
-    "{i}Alistair mutes and turns off video.{/i}"                                                                                          #ALISTAIR TURN OFF VIDEO
+    #scene blank
+    "(Alistair has left the outbreak room.){/i}"                                                                                          #ALISTAIR TURN OFF VIDEO
     jump b3_end
     return
 
@@ -154,10 +155,10 @@ label b3_FoundMembers:
     Alistair "Ah... you realise this is a room to find group members right?"
     player "Yikes, I missed that part of the instructions…"
     Alistair "Welp. I’ll see you in class I guess."
-    # Show Alistair_unhappy at top_right                                                                                        #ALISTAIR UNHAPPY (change picture?)
-    "{i}Alistair does not want to work with you.{/i}"
-    $ Alistair_angry = true
-    "{i}Alistair mutes and turns off video.{/i}"                                                                                                     # ALISTAIR TURN OFF VIDEO ??
+    # Show Alistair_unhappy at middle                                                                                        #ALISTAIR UNHAPPY (change picture?)
+    $ Alistair_angry = True
+    # scene blank
+    "(Alistair has left the outbreak room.)"                                                                                        # ALISTAIR TURN OFF VIDEO ??
     jump b3_end
     return
 
@@ -203,8 +204,9 @@ label b3_BackOnTopic:
     Jessica "Really…? You're just gonna to interrupt me with your boring project?"                             
     Jessica "Yikes, I’m outta here."         
     # Show Jessica_unhappy at top_left                                                                      #JESSICA UNHAPPY (CHANGE PICTURE?)
-    "Jessica mutes and turns off camera."
-    "{i}Jessica doesn’t want to work with you{/i}" 
+    # scene blank
+    "(Jessica has left the outbreak room.)"
+   
     $ Jessica_angry = True
     Alistair "Woah. Explosive."
     call b3_JessGone
@@ -237,8 +239,8 @@ label b3_Mask:
 label b3_InsultJessica:
     Jessica "… Seriously? That’s all you have to say? What an asshole."            
     # Show Jessica_unhappy at top_left                                                                        # Change expression for Jessica (unhappy)
-    "{i}Jessica leaves the outbreak room.{/i}"
     # scene blank
+    "(Jessica has left the outbreak roon.)"
     # Show Alistair_1 at middle
     $ Jessica_angry = True
     Alistair "Hey man. That wasn’t nice."
@@ -246,7 +248,8 @@ label b3_InsultJessica:
     # Show Alistair_unhappy at middle                                                                         # Change expression for Alistair
     Alistair "I don’t appreciate that."   
     $ Alistair_angry = True    
-    "{i}Alistair leaves the outbreak room{/i}"
+    # scene blank
+    "(Alistair has left the outbreak room)"
     "{i}You think about your actions.{/i}"
     "{i}You regret your actions.{/i}"
     show blue_screen
