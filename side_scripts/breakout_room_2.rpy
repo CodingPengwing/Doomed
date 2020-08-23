@@ -1,247 +1,272 @@
-label breakout_room_3:
-    "You are the first to join, Jessica connects shortly after with camera and mic on."
+label breakout_room_2:
+    $ shouko_message = False
 
-    Jessica "Oh, it's just you."
+    show Nine_1 at top_left_screen
+    #SHOUKO show at top_right_screen
+
+    "You are last to join, no one seems to be talking. The girl appears to be on mute."
+    Nine "Finally someone else is here!"
+    Nine "Felt like I was talking to a brick wall with Miss Mute over here."
+    Shouko "…"
 
     menu:
-        "Hey! Hopefully the other guy joins soon.":
-            call HopefullyOtherGuyJoins
+        "Miss Mute?":
+            call MissMute
             pass
-        "Yeah, I guess. Do you have any ideas for the project?":
-            call ProjectIdeas
+        "What were you guys talking about before?":
+            Nine "Oh you know..."
+            pass
+    Nine "I was just saying how anyone fortunate enough to be on my team would absolutely ace this subject."
+
+    if shouko_message:
+        centered "{i}You receive a friend request from \"Shouko Oogushi\""
+        menu:
+            "Accept friend request":
+                pass
+            "Decline friend request":
+                $ shouko_message = False
+                pass
+
+    Nine "Not to brag or anything but I’m 190\% sure I’m the smartest person in this tute."
+    Nine "No offence to you or anything,"
+    Nine "but you probably won’t do that well just by yourself haha."
+
+    menu:
+        "Continue to listen to his rant":
+            pass
+        "Attempt to cut him off":
+            Nine "Uhh okay rude much? So anyways as I was saying..."
             pass
 
-    if Jessica_angry:
-        call JessGone
-    else:
-        call JessStay
+    Nine "Did I mention that I’m f**king loaded?"
+
+    if shouko_message:
+        call shouko_message1
+
+    Nine "I kinda got loads of connections here and there…"
+    Nine "I mean I’m kinda the greatest aren’t I?"
+
+    if shouko_message:
+        call shouko_message2
+
+    Nine "I absolutely carried my team last sem so…"
+    Nine "Ugh honestly aren’t I the best?"
+
+    if shouko_message:
+        call shouko_message3
+
+    Nine "So what do you say? Team up with me?"
+
+    menu:
+        "Yeah for sure!":
+            Nine "Nice! Looking forward to it!"
+            $ num_team_members += 1
+            $ Nine_joined_team = True
+            "(Shouko leaves the meeting)"                 # E N D     - TEAM MATE ACQUIRED - NINE
+            "{i}You have acquired a team member"
+
+            jump b2_end
+            pass
+        "I don't know...":
+            call Idontknow
+            pass
+        "Could you shut the f*** up for once":
+            call nine_be_angry
+            pass
+
+    if shouko_message:
+        call shouko_final_moments
+
+    jump b2_end                                      # E N D ------
 
     return
-
-label HopefullyOtherGuyJoins:
-        Jessica "Yeah, I’ve got something for you guys when he joins."
-        "{i}Alistair joins muted and without his camera on, but he turns on his mic shortly after.{/i}"
-        Alistair "Sorry I joined late, what's happening?"
-        menu:
-            "No worries, I think Jessica wants to tell us something.":
-                call NoWorries
-                pass
-            "What took you so long? We were both waiting!":
-                call Waiting
-                pass
-        return
-
-label NoWorries:
-        Jessica "You guys are gonna love this."
-        Alistair "I’m excited, let's hear it!"
-        return
-
-label Waiting:
-        Alistair "Ahhh… I just had some issues. I’m really sorry."
-        Jessica "He already apologised, what do you want from him?"
-        "..."
-        Jessica "Anyways…"
-        return
-label ProjectIdeas:
-        Jessica "Project? Who cares about that, I’ve got better things to spend my time on."
-        "Alistair joins muted and without his camera on, but he turns on his mic shortly after."
-        Alistair "Sorry I joined late, what's happening?"
-        Jessica "Can you believe [player_name]? They want to talk about the project… how lame."
-        [player_name] "I-"
-        Alistair "Ahh there’s nothing wrong with that! Maybe we should talk about it."
-        Jessica "You too?? ... I can’t believe you guys."
-        "Alistair and Jessica go back and forth for a minute."
-        Jessica "Yikes. You guys suck, I’m out of here."
-        "{i}Jessica mutes and turns off her camera.{/i}"
-        $ Jessica_angry = True
-        menu:
-            "Ah, I’m sorry... that was my fault.":
-                Alistair "Don’t worry about it, she was definitely in the wrong. Let's move on!"
-                pass
-            "Let's continue without her, we don't need her.":
-                Alistair "Ah, that’s not nice... But you’re right, let's not waste time."
-                pass
-        return
-
-label JessGone:
-        Alistair "Actually, I’ve got something cool to show you."
-        "{i}You hear some shuffling sounds.{/i}"
-        Alistair "Wanna know why my camera has been off the entire time?"
-        menu:
-            "Yeah, let’s see it!":
-                pass
-            "No offense man, I just want to talk about the project.":
-                Alistair "Well... I would say it’s related."
-                pass
-        "You hear some sounds of metal clanking."
-        "{i}Alistair turns on his camera, revealing Alistair in his kitchen.{/i}"
-        Alistair "Yo. I’m making some pancakes."
-        Alistair "If you pick me for your team, I’ll give you some pointers…"
-        Alistair "And maybe, just maybe… I’ll reveal my secret recipe."
-        menu:
-            "Aren’t all pancakes the same? Waffles are better anyways. Also why are you cooking during class time?":
-                call WhyCooking
-                pass
-            "Oooh... now THAT is something I'm interested in!":
-                call Interested
-                pass
-        return
-
-label WhyCooking:
-        Alistair "Ahh, come on man! You really don’t understand do you?"
-        Alistair "Kinda a pity. Don’t worry about it."
-        "{i}Alistair seems disappointed.{/i}"
-        Alistair "Guess I can’t blame you for wanting to stay on track. I guess we can talk about the project."
-        player "Let’s get back on topic then!"
-        "{i}You and Alistair talk about the subject for the last few remaining minutes. {/i}"
-        jump b3_end
-
-label b3_end:
-      if (num_team_members < 2):
-          if not Alistair_joined_team:
-              menu:
-                  "Will you invite Alistair to join your team?"
-                  "Yes":
-                      if Alistair_angry:
-                          "Alistair declined your invitation."
-                          Alistair "Not after what you've said."                      # Alistair INDIVIDUAL SHOT
-                      else:
+label b2_end:
+    scene blank
+    centered "{i}The Outbreak room has ended."
+    if (num_team_members < 2):
+        if not Nine_joined_team:
+            menu:
+                "Will you invite Nine-One to join your team?"
+                "Yes":
+                    if Nine_angry:
+                        "Nine declined your invitation."
+                        show Nine_1 at middle
+                        Nine "F**k off bro."                      # NINE INDIVIDUAL SHOT
+                        scene blank
+                    else:
                         $ num_team_members += 1
-                        $ Alistair_joined_team = True
-                        "Alistair accepted your invitation."
+                        $ Nine_joined_team = True
+                        "Nine accepted your invitation."
                         "Successfully acquired a new teammate!"
-                        pass
-                  "No":
-                      pass
-      if (num_team_members < 2):
-          if not Jessica_joined_team:
-              menu:
-                  "Will you invite Jessica to join your team?"
-                  "Yes":
-                      if Jessica_angry:
-                        "Jessica declined your invitation"
-                        Jessica "You seriously think I would even consider working with you??"  # Jessica INDIVIDUAL SHOT
-                      else:
+                    pass
+                "No":
+                    pass
+    if (num_team_members < 2):
+        if not Shouko_joined_team:
+            menu:
+                "Will you invite Shouko to join your team?"
+                "Yes":
+                    if Shouko_angry:
+                        "Shouko declined your invitation"
+                    else:
                         $ num_team_members += 1
-                        $ Jessica_joined_team = True
-                        "Jessica accepted your invitation"
+                        $ Shouko_joined_team = True
+                        "Shouko accepted your invitation"
                         "Successfully acquired a new teammate!"
-                        pass
-                  "No":
-                      pass
-      return
+                    pass
+                "No":
+                    pass
 
-label Interested:
-        Alistair "Now that’s what I’m talking about"
-        "You and Alistair talk about pancakes for a minute."
-        Alistair "Anyway, I’ve actually got something related to the class... I think it will help out big time."
-        Alistair "But! I can only show you if you work with me though."
-        menu:
-            "Yeah, let’s team up!":
-                if num_team_members < 2:
-                  call TeamUp
-                  pass
-                else:
-                    "You already have a full team"
-            "Oh sorry! I’ve already found my other group members.":
-                call FoundMembers
-                pass
-            "Nah, I’m good.":
-                call ImGood
-                pass
-        return
+    return
+label MissMute:
+    Nine "Yeah that’s my nickname for her."
+    Nine "Fitting don’t you think? She hasn’t said a word since I joined lmao"
+    "{i}Shouko looks as if to speak but decides against it.{/i}"
+    menu:
+        "Prompt her to speak.":
+            call PromptSpeak
+            pass
+        "What were you guys talking about before?":
+            Nine "Oh you know..."
+            return
+            pass
+    return
 
-label ImGood:
-        Alistair "Welp. I’ll see you in class I guess."
-        "{i}Alistair mutes and turns off video.{/i}"
-        jump b3_end
-        return
+label PromptSpeak:
+    Shouko "I… uh… {size=-10}My name is...{/size} {size=-15}Shouko{/size}."
+    menu:
+        "I see that you like anime?":
+            "{i}Shouko blushes but remains silent."
+            $ shouko_message = True
+            pass
+        "Sorry, could you speak up?":
+            Shouko "..."
+            "{i}Shouko seems hurt by your comment."
+            pass
+        "What were you guys talking about before?":
+            Nine "Oh you know..."
+            return
+            pass
+    Nine "So anyways..."
+    return
+label shouko_message1:
+    centered "{i}You have (1) new messages"
+    centered "Shouko: Thanks for talking to me! That really made me feel appreciated (> <)"
+    menu:
+        "No worries at all!":
+            pass
+        "Lol what's with the weird emoticon?":
+            $ shouko_message = False;
+            pass
+    return
 
-label FoundMembers:
-        Alistair "Ah... you realise this is a room to find group members right?"
-        player "Yikes, I missed that part of the instructions…"
-        Alistair "Welp. I’ll see you in class I guess."
-        "{i}Alistair does not want to work with you.{/i}"
-        $ Alistair_angry = true
-        "{i}Alistair mutes and turns off video.{/i}"
-        jump b3_end
-        return
 
-label TeamUp:
-        "{i}Alistair joins your team{/i}"                        #     - TEAM MATE ACQUIRED - Alistair
-        Alistair "Alright, give me a second."
-        "Alistair sends a link."
-        Alistair "I present… detailed notes for the whole class!"
-        player "Woah."
-        Alistair "I like working with people who aren’t just work-oriented."
-        Alistair "You all seem fun… I’m looking forward to working together!"
-        menu:
-            "Me too!":
-                pass
-            "Seems like it’s gonna be a great semester already!":
-                pass
-        Alistair "Woooo! We can make some pancakes together after quarantine too!"
-        jump b3_end
-        return
+label shouko_message2:
+    centered "{i}You have (1) new messages"
+    centered "Shouko: I really don’t think you should choose Nine as a teammate… (> <;)"
+    menu:
+        "I agree.. He seems a bit dodgy":
+            pass
+        "He seems like a cool dude":
+            $ shouko_message = False;
+            pass
+    return
+label shouko_message3:
+    centered "{i}You have (1) new messages"
+    centered "Shouko: Don’t listen to a word he’s saying XD Apparently last sem he got caught cheating and failed :P"
+    menu:
+        "Yikes...":
+            pass
+        "As long as I get a good mark right?":
+            $ shouko_message = False;
+            pass
+    return
 
-label JessStay:
-        Jessica "I actually just got my third UMLL yesterday! Not trying to flex, just wanted you guys to know!"
-        Jessica "Oh! Also, have you guys heard of the new party happening next week? Secret Mondays?"
-        Alistair "Hey, that sounds lit! You guys wanna all go together?"
-        menu:
-            "Yeah!! I’m so down!":
-                pass
-            "Hm, I’ll have to see if I’m free...":
-                pass
-        Jessica "Sick! I can actually give you guys a discount, just jump on this link."
-        "{i}Jessica sends a link in chat.{/i}"
-        Alistair "Is there a dress code or something? I haven’t been before if I’m being honest"
-        Jessica "Just come in casual, don’t stress."
-        Jessica "… Actually, you might want to bring a mask too."
-        menu:
-            "A mask?":
-                call Mask
-            "Shouldn’t we get back on topic?":
-                call BackOnTopic
-        return
+label Idontknow:
+    Nine "Uhh okay? Why though?"
+    menu:
+        "I'm just a little indecisive":
+            Nine "Right…"
+            Nine "Decide fast though cause I’m sorta in high demand right now."
+            Nine "REALLY"
+            Nine "HIGH"
+            Nine "DEMAND"
+            "(Nine leaves the room)"                      # NINE LEAVES
+            pass
+        "You seem like kinda a shitty person...":
+            call nine_be_angry
+            pass
+    return
 
-label BackOnTopic:
-        Jessica "Really…? You're just gonna to interrupt me with your boring project?"
-        Jessica "Yikes, I’m outta here."
-        "Jessica mutes and turns off camera."
-        "{i}Jessica doesn’t want to work with you{/i}"
-        $ Jessica_angry = True
-        Alistair "Woah. Explosive."
-        call JessGone
-        return
+label nine_be_angry:
+    $ Nine_angry = True
+    Nine "{cps=*3}What the fuck did you just fucking say about me, you little bitch? I’ll have you know I graduated top of my class in the Navy Seals, and I’ve been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I’m the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fuckin-{/cps}"
+    "(Nine leaves the room)"                              # NINE LEAVES
+    return
 
-label Mask:
-        Jessica "Yeah! I actually make them myself, let me show you some of my designs."
-        Jessica "If there’s any you like, check out my website! I’ll hook you guys up with a discount too."
-        "{i}Jessica disappears but quickly returns to her seat, now wearing a mask.{/i}"                              # JESSICA NEEDS A MASK HERE
-        Jessica "Check it out."
-        Alistair "Damn, that's pretty cool!"
-        Jessica "Right?? Look at this one too!"
-        "{i}Jessica swaps out her mask to another design.{/i}"
-        Jessica "I’ll link you guys my {i}stangram{/i}, I’ve got more there"
-        menu:
-            "Damn, that's really cool!":
-                jump b3_end
-                pass
-            "Hm, that top stitching isn’t very neat... but not bad for a beginner.":
-                call InsultJessica
-                pass
-        return
+label shouko_final_moments:
+    Shouko "..."
+    Shouko "Is he finally gone?"
+    Shouko "Thank goodness..."
 
-label InsultJessica:
-        Jessica "… Seriously? That’s all you have to say? What an asshole."
-        "{i}Jessica leaves the outbreak room.{/i}"
-        Alistair "Hey man. That wasn’t nice."
-        "..."
-        Alistair "I don’t appreciate that."
-        "{i}Alistair leaves the outbreak room{/i}"
-        "{i}You think about your actions.{/i}"
-        "{i}You regret your actions.{/i}"
-        show blue_screen
-        jump b3_end
-        return
+    menu:
+        "What a relief":
+            pass
+        "Why are you still here?":
+            Shouko "?!"
+            Shouko "Am I not supposed to be?"
+            Shouko "..."
+            "(Shouko leaves the call)"                   # E N D --- SHOUKO LEAVES
+            $ Shouko_angry = True
+            return
+            pass
+
+    Shouko "I know right."
+    # SHOUKO BLUSHES
+    Shouko "Thank you for accepting my friend request"
+
+    menu:
+        "No worries!":
+            pass
+        "It was fun talking to you!":
+            pass
+
+                                                                 # SHOUKO BLUSHES
+
+    Shouko "I just wanted to warn you about Nine."
+    Shouko "Thanks for believing me."
+
+    player "How did you know Nine cheated?"
+
+    Shouko "Do you know Alistair from our class?"
+
+    menu:
+        "Alistair Maffot?":
+            "Yes that’s right!"
+            pass
+        "I'm not too sure...":
+            pass
+
+    Shouko "Well, him and Nine-One are both repeating the subject this semester."
+    Shouko "But Alistair is actually a really nice and hardworking person!"
+    Shouko "Alistair only failed because Nine cheated!"
+
+    menu:
+        "I see...":
+            pass
+        "Thanks for the heads up!":
+            pass
+    centered "Outbreak room ends in 60 seconds."
+
+    Shouko "It was nice talking to you!"
+                                                                        # SHOUKO BLUSHES
+    Shouko "Hopefully I’ll get to talk to you again! (> <)"
+
+    menu:
+        "Hope to talk again soon too!":
+            pass
+        "See you!":
+            pass
+
+    "(Shouko leaves the room)"                            # SHOUKO LEAVES
+    return
