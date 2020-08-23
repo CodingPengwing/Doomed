@@ -16,6 +16,7 @@ label breakout_room_3:
         call b3_JessGone
     else:
         call b3_JessStay
+
     return
 
 label b3_HopefullyOtherGuyJoins:
@@ -56,7 +57,8 @@ label b3_ProjectIdeas:
     Jessica "You too?? ... I can’t believe you guys."
     "Alistair and Jessica go back and forth for a minute."
     Jessica "Yikes. You guys suck, I’m out of here."
-    "{i}Jessica mutes and turns off her camera.{/i}"  
+    "{i}Jessica mutes and turns off her camera.{/i}" 
+    # scene blank 
     # Show  Alistair_default at middle                                                                                                           #Jessica turns off camera
     $ Jessica_angry = True
     menu:
@@ -164,7 +166,6 @@ label b3_TeamUp:
     Alistair "Alright, give me a second."
     "{i}Alistair sends a link.{/i}"
     Alistair "I present… detailed notes for the whole class!"
-    $ Alistair_mentioned_recipe = True
     player "Woah."
     Alistair "I like working with people who aren’t just work-oriented."
     Alistair "You all seem fun… I’m looking forward to working together!"
@@ -215,7 +216,6 @@ label b3_Mask:
     "{i}Jessica disappears but quickly returns to her seat, now wearing a mask.{/i}"                           
     # Show Jessica_3 at top_left                                                                                     # JESSICA NEEDS A MASK HERE  
     Jessica "Check it out."
-    $ Jessica_mentioned_mask = True;
     Alistair "Damn, that's pretty cool!"
     Jessica "Right?? Look at this one too!"  
     "{i}Jessica swaps out her mask to another design.{/i}"
@@ -236,6 +236,7 @@ label b3_InsultJessica:
     Jessica "… Seriously? That’s all you have to say? What an asshole."            
     # Show Jessica_unhappy at top_left                                                                        # Change expression for Jessica (unhappy)
     "{i}Jessica leaves the outbreak room.{/i}"
+    # scene blank
     # Show Alistair_1 at middle
     $ Jessica_angry = True
     Alistair "Hey man. That wasn’t nice."
