@@ -1,4 +1,5 @@
 label breakout_room_3:
+    scene blank
     "You are the first to join, Jessica connects shortly after with camera and mic on."
 
     Jessica "Oh, it's just you."
