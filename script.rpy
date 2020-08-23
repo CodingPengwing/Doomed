@@ -52,6 +52,9 @@ transform middle:
     xalign 0.5
     yalign 0.1
 
+transform center:
+    xalign 0.5
+    yalign 0.5
 
 # Backgrounds
 image bedroom = Image("bedroom.jpg")
@@ -59,6 +62,8 @@ image main_room = Image("home_space.png")
 image breakout_transition = Image("transition.jpg")
 image blue_screen = Image("blue_screen.jpg")
 image blank = Solid("#000000")
+image teddy_one = Image("teddy_one.jpg")
+image teddy_two = Image("teddy_two.jpg")
 
 
 #-----
@@ -162,8 +167,26 @@ label intro:
     define player = Character("Me", color = "#666600")
 
     player "* Ah of course, of course, my name is [player_name]... what a dumbass I am. *"
-    "{i}As you start to remind yourself of your own name. You also
-    realise that you have to make a very important decision."
+    "{i}As you remind yourself of your own name. You also start to remember that weird dream you had last night."
+    player "* Hmmm, I must've been {b}that{/b} tired huh? That was one of the weirdest dreams I've ever had. *"
+    "{i}As always, it takes a while for the entire dream to come back, but it starts with you walking down the supermarket isle, with your surgical mask on of course."
+    "{i}Doing the groceries is pretty much a contactless sport nowadays, you try to steer clear of everyone. Wouldn't want to get Covid-19, that would be ugly."
+    show teddy_one at center
+    "{i}As you turn the corner of the isle, you see a huge teddy bear sitting in the middle of the supermarket floor."
+    "{i}It was wearing a huge mask too, but it was very annoyed that it had to do so in public."
+    "{i}It thought that it was its own teddy right to be free from any social restraints in the name of \"safety\"."
+    "{i}It was pissed, ohhh so pissed, it had a pancake on its left hand that it couldn't eat, all because of this stupid mask covering its face."
+    "{i}\"Stupid communist politicians!\" - it thought to itself - \"How dare they violate my teddy rights like this?\""
+    "{i}It wanted to take the mask off, but didn't know how to, and thus, got really really mad."
+    hide teddy_one
+    show teddy_two at center
+    "{i}It suddenly transformed into a scary looking serial killer teddy. It got up and started running in your direction, screaming \"TAKE THIS MASK OFF OF ME\"."
+    "{i}Before you knew it, it was right on top of you, with its right foot hanging in the air right above your face."
+    "{i}It said \"Take this! You left-wing narcissist.\" You didn't have any time to react, all you saw was its huge teddy foot coming down on you... "
+    hide teddy_two
+    "{i}And that's when you woke up."
+    "{i}Wow... if there's ever any reason to not love those cuddly teddies..."
+    "{i}Bringing yourself back to reality, you realise that you have to make a very important decision."
     player "* Hmmm my Algorithms tutorial starts in 1 minute. I \
     should get the computer... OR, I could go back to sleep. *"
 
