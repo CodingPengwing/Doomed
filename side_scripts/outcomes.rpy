@@ -81,15 +81,45 @@ label outcome_Alistair_and_Jessica:
 
 
 label outcome_Brigette_and_Alistair:
-    $ player_score = "High Distinction"
+    if Brigette_mentioned_teddy and Alistair_mentioned_recipe:
+        centered "{b}{size=40}Score: 100{/size}{/b} \n
+        You got the best score! - however the group environment could have been better"
+        centred "Strangely you got a good score, while the group didn't get along well, things just seemed to fall into place"
+        centred "You get a strong sense of deja vu, maybe it's something to do with that dream you had"
+        centred "You didn't make any friends but at least you got a great score"
+    else:
+        centred "{b}{size=40}Score: 76{/size}{/b} \n
+        You did quite well - however the group could have gotten along better"
+        centred "Alistair and Brigette lacked common interests and things to talk about, but pulled through with a decent score"
+        centred "You saw it coming as you were working on the project though there wasn't anything you could have done about it"
+        if Alistair_mentioned_recipe:
+            centred "You think back and remember you had a dream about pancakes on the day you met Alistair, cooking pancakes ... how strange!"
+            centred "He didn't have a teddy though ... did Brigette have one?"
+
     return
 
 label outcome_Brigette_and_Jessica:
-    $ player_score = "High Distinction"
+    if Brigette_mentioned_teddy and Jessica_mentioned_teddy:
+        centered "{b}{size=40}Score: 90{/size}{/b} \n
+        You did really well - you chose a great combo"
+        centred "Brigette and Jessica both became extremely close friends for life after bonding over having the same teddy bear"
+        centred "You also become good friends with them, partying with them and hanging out all the time"
+        centred "However sometimes it seemed like they were too similar, and you could achieve more with variety"
+        centred "You finished with a great score and some good friends, which is what matters"
+    else:
+        centered "{b}{size=40}Score: 67{/size}{/b} \n
+        You didn't do great ... but you passed! - the group dynamic was alright"
+        centered "While everyone contributed, it just seemed a little awkward between Brigette and Jessica"
+        centered "You feel like they could have gotten along well, but something was just missing"
+        centered "If only you had gotten to know them more before deciding to work with them..."
     return
 
 label outcome_Brigette_and_Nine:
-    $ player_score = "High Distinction"
+    centered "{b}{size=40}Score: 0{/size}{/b} \n
+    Your score was really good but... you were caught cheating - this was the worst group you've been in"
+    centred "Brigette and Nine fought all the time and you weren't able to coordinate anything"
+    centred "In the end, Nine submitted the work ... but he was caught cheating"
+    centred "You feel like it's impossible to work with Nine"
     return
 
 label outcome_Brigette_and_Shouko:
