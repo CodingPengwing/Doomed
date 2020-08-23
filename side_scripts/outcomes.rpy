@@ -78,14 +78,14 @@ label outcome_Brigette_and_Nine:
     return
 
 label outcome_Brigette_and_Shouko:
-    if Brigette_mentioned_teddy and Shouko_mentioned_teddy
+    if Brigette_mentioned_teddy and Shouko_mentioned_teddy:
         centered "{b}{size=40}Score: 80{/size}{/b} \n
         You did really well - the group environment great"
         centered "Brigette and Shouko bonded over their teddies and became close friends"
         centered "You feel like you worked well together, but sometimes things felt too repetitive"
         centered "You feel that you needed more variety in your group, that Brigette and Shouko bought similar thoughts to the table"
         centered "Despite a great score, you feel you could have done better"
-    else 
+    else:
         centered "{b}{size=40}Score: 55{/size}{/b} \n
         You didnt do great - Shouko and Brigette did not get along at all"
         centered "Shouko was easily offended by Brigette despite her having good intensions and miscommunication was rampant"
@@ -102,13 +102,13 @@ label outcome_Josh_and_Alistair:
     return
 
 label outcome_Josh_and_Brigette:
-    if Brigette_mentioned_teddy and Josh_mentioned_guitar
+    if Brigette_mentioned_teddy and Josh_mentioned_guitar:
         centered "{b}{size=40}Score: 80{/size}{/b} \n
         You did really well - the group environment was really good but sometimes a bit awkward for you"
         centered "You become quite close to both of them, enjoying their company"
         centered "You felt like something was blooming between the two ... but you're not sure."
         centered "You think they would make a good couple"
-    else
+    else:
         centered "{b}{size=40}Score: 77{/size}{/b} \n
         You did quite well - you felt like you were third wheeling at times ... despite them not dating"
         centered "You dont become very close to either of them, and go your seperate ways"
@@ -124,7 +124,7 @@ label outcome_Josh_and_Jessica:
         centered "Although initially it seemed like you were bound for a bad score..."
         centered "You somehow pull through, and all become good friends"
         centered "It was almost as if Jessica's teddy helped out"
-    else 
+    else: 
         centered "{b}{size=40}Score: 62{/size}{/b} \n
         You did ok - the group environemnt was mild at best"
         centered "You already felt initally that this wasnt going to work out, but it definitely could have been worse"
@@ -141,12 +141,12 @@ label outcome_Josh_and_Nine:
     return
 
 label outcome_Josh_and_Shouko:
-    if Shouko_mentioned_teddy and Josh_mentioned_guitar
+    if Shouko_mentioned_teddy and Josh_mentioned_guitar:
          centered "{b}{size=40}Score: 80{/size}{/b} \n
          You did very well - there was a really good group environment"
          centered "You become quite close with both Josh and Shouko, and Josh even teaches both of you to play guitar!"
          centered "The group work was very efficient, almost felt as if Shouko's teddy was helping out too"
-    else
+    else:
         centered "{b}{size=40}Score: 73{/size}{/b} \n
         You did well - everyone had a good time"
         centered "You three become friends but nothing special happens"
@@ -170,13 +170,13 @@ label outcome_Nine_and_Jessica:
 
 
 label outcome_Shouko_and_Alistair:
-    if Shouko_mentioned_teddy and Alistair_mentioned_recipe
+    if Shouko_mentioned_teddy and Alistair_mentioned_recipe:
         centered "{b}{size=40}Score: 100{/size}{/b} \n
         You got full marks ... and even set a record - Shouko and Alistair loved working with you"
         centered "You feel a sense of deja vu, and it reminds you of that dream you had, with the teddybear and pancake"
         centered "The group becomes lifelong friends, and you push each other to pursure their dreams"
         centered "You feel incredibly happy"
-    else
+    else:
         centered "{b}{size=40}Score: 80{/size}{/b} \n
         You did very well  - enjoyed working together"
         centered "Alistair did a lot of the work and even taught both you and Shouko a few tricks. You remain friends with them but only temporarily. \n
@@ -184,12 +184,12 @@ label outcome_Shouko_and_Alistair:
     return
 
 label outcome_Shouko_and_Jessica:
-    if Shouko_mentioned_teddy and Jessica_mentioned_teddy
+    if Shouko_mentioned_teddy and Jessica_mentioned_teddy:
         centered "{b}{size=40}Score: 90{/size}{/b} \n
         You topped the class ... and set a personal record - everyone had a great time"
         centered "You become best friends with Shouko and Jessica.\n
         Shouko becomes less shy after partying with Jessica- Jessica learns to be more empathetic from Shouko"
-    else
+    else:
         centered "{b}{size=40}Score: 75{/size}{/b} \n
         Your score was good - but you feel like you could have done better."
         centered "Shouko ended up becoming good friends with you and Jessica invited you to a lot of parties but you never became close. \n  
