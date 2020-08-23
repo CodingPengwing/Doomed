@@ -109,11 +109,11 @@ label start:
     $ Brigette_mentioned_teddy = False
     $ Shouko_mentioned_teddy = False
 
-    call artist_statement
-    call disclaimer_scene
-    call intro
-    call online_class_scene
-    call player_instructions
+    call artist_statement from _call_artist_statement
+    call disclaimer_scene from _call_disclaimer_scene
+    call intro from _call_intro
+    call online_class_scene from _call_online_class_scene
+    call player_instructions from _call_player_instructions
 
     # breakout room 1
     scene breakout_transition
@@ -122,15 +122,15 @@ label start:
         "Would you like to join the conversation or skip this group?"
 
         "Join the conversation":
-            call breakout_room_1
+            call breakout_room_1 from _call_breakout_room_1
             pass
         "Quiet watch the other students like a {i}creepy{/i} ninja (skip)":
-            call skip_breakout_1
+            call skip_breakout_1 from _call_skip_breakout_1
             pass
 
     if num_team_members >= 2:
         player "I've got my teammates secured, looks like I can go back to sleep. Stuff the rest of the class."
-        call end_game
+        call end_game from _call_end_game
         return
 
     # breakout room 2
@@ -140,23 +140,22 @@ label start:
         "Would you like to join the conversation or skip this group?"
 
         "Join the conversation":
-            call breakout_room_2
+            call breakout_room_2 from _call_breakout_room_2
             pass
         "Quietly observe in order to not disturb the natural habitat of awkward university students (skip)":
-            call skip_breakout_2
+            call skip_breakout_2 from _call_skip_breakout_2
             pass
 
     if num_team_members >= 2:
         player "I've got my teammates secured, looks like I can go back to sleep. Stuff the rest of the class."
-        call end_game
+        call end_game from _call_end_game_1
         return
 
     # breakout room 3
     scene breakout_transition
     centered "You are being moved to outbreak group 3"
-    centered "Guess you're going to join the conversation this time... instead of being a mannequin."
-    call breakout_room_3
-    call end_game
+    call breakout_room_3 from _call_breakout_room_3
+    call end_game from _call_end_game_2
 
     # finish
     return
@@ -168,7 +167,7 @@ label artist_statement:
     scene blank
     centered "{b}{size=30}Quick introduction{/size}{/b}\n
     \n\n
-    The purpose of this of the project is to reflect on the current dynamic situation regarding Covid-19 all over the world, and effects it has on our everyday life.
+    The purpose of this of the project is to reflect on the current dynamic situation regarding COVID-19 all over the world, and effects it has on our everyday life.
     The pandemic has made the year 2020 one to be remembered for many wrong reasons, with bushfires and natural disasters, as well as political unrest being other causes of concern.
     As university students, we the creators, felt it was fitting that we recreate the struggles of our own online learning experience, and the difficulties related to such communications, in a light-hearted manner.
     Some references in this product will be better understood by university students (especially from the University of Melbourne),
@@ -178,7 +177,7 @@ label artist_statement:
     We took inspiration from this, which is why the game is called Doomed.\n
     \n\n
     Most of the visual elements presented in this visual novel were self-produced, with a few exceptions being listed in the \"About\" section from the menu.\n
-    We would like to give very special thanks to our friend Crystal Li for allowing us to feature her amazing artworks in our story. Without her contributions, we would not have any product to offer... it would have been truely doomed."
+    We would like to give very special thanks to our friend Crystal Li for allowing us to feature her amazing artworks in our story. Without her contributions, we would not have any product to offer... it would have been truly doomed."
     return
 
 
@@ -236,6 +235,7 @@ label intro:
     show bedroom
     "{i}And that's when you woke up."
     "{i}Wow... if there's ever any reason to not love those cuddly teddies..."
+    "{i}Guess sometimes you can only fix the world's problems by letting teddy bears have their pancakes."
     "{i}Bringing yourself back to reality, you realise that you have to make a very important decision."
     player "* Hmmm my Algorithms tutorial starts in 1 minute. I \
     should get the computer... OR, I could go back to sleep. *"
