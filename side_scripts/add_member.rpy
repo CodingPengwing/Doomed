@@ -9,6 +9,7 @@ label add_Josh:
     "{i}Josh joined your team."
     $ Josh_joined_team = True
     $ num_team_members += 1
+    return
 
 label add_Brigette:
     if num_team_members >= 2:
@@ -21,6 +22,7 @@ label add_Brigette:
     "{i}Brigette joined your team."
     $ Brigette_joined_team = True
     $ num_team_members += 1
+    return
 
 label add_Nine:
     if num_team_members >= 2:
@@ -33,6 +35,7 @@ label add_Nine:
     "{i}Nine joined your team."
     $ Nine_joined_team = True
     $ num_team_members += 1
+    return
 
 label add_Shouko:
     if num_team_members >= 2:
@@ -45,6 +48,7 @@ label add_Shouko:
     "{i}Shouko joined your team."
     $ Shouko_joined_team = True
     $ num_team_members += 1
+    return
 
 label add_Jessica:
     if num_team_members >= 2:
@@ -57,6 +61,7 @@ label add_Jessica:
     "{i}Jessica joined your team."
     $ Jessica_joined_team = True
     $ num_team_members += 1
+    return
 
 label add_Alistair:
     if num_team_members >= 2:
@@ -69,3 +74,4 @@ label add_Alistair:
     "{i}Alistair joined your team."
     $ Alistair_joined_team = True
     $ num_team_members += 1
+    return
