@@ -213,7 +213,7 @@ label online_class_scene:
         "Well... kinda":
             professor "I see. We're going to have a very friendly chat after class."
         "No sir, I'm very sorry. It won't happen again.":
-            professor "Yeah yeah, same old trick, I've heard enough from you"
+            professor "Yeah yeah, same old trick, I've heard enough from you."
 
     professor "Alright everyone, let's finally start. Today's class is {b}very important{/b}. As you already know, we have already released the project for this semester."
     professor "If you need a quick recap, we're going to make a very basic computer program. You need to implement a polymorphic hash table."
