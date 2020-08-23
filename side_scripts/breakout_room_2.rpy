@@ -1,6 +1,6 @@
 label breakout_room_2:
     $ shouko_message = False
-
+    scene blank
     show Nine_1 at top_left_screen
     show Shouko_1 at top_right_screen
 
