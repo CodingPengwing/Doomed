@@ -247,6 +247,9 @@ label shouko_final_moments:
             pass
         "Thanks for the heads up!":
             pass
+        "That's a nice teddy bear you have at the back!":
+            call b2_teddybear
+            pass
     centered "Outbreak room ends in 60 seconds."
 
     Shouko "It was nice talking to you!"
@@ -258,4 +261,10 @@ label shouko_final_moments:
             pass
         "See you!":
             pass
+    return
+
+label b2_teddybear:
+    $ Shouko_mentioned_teddy = True
+    Shouko "!"
+    Shouko "Yeah I really like plushies..."                               # SHOUKO BLUSHES
     return
