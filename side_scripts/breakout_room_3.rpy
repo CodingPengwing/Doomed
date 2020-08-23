@@ -217,6 +217,7 @@ label b3_Mask:
     # Show Jessica_3 at top_left                                                                                     # JESSICA NEEDS A MASK HERE  
     Jessica "Check it out."
     Jessica "I like to make my teddy bear wear my masks"
+    $ Jessica_mentioned_teddy = True
     Alistair "Damn, that's pretty cool!"
     Jessica "Right?? Look at this one too!"  
     "{i}Jessica swaps out her mask to another design.{/i}"
