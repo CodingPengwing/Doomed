@@ -24,11 +24,11 @@ label b1_end:
 
 label breakout_room_1:
     scene blank
-    show Josh_1 at top_left_screen
-    show Brigette_1 at top_right_screen
+    show Josh_one at top_left_screen
+    show Brigette_one at top_right_screen
 
     "You are last to join."
-    "The two strangers are already talking."
+    "The two stangers are already talking."
 
     menu:
         "Hey! How are you guys doing?":
@@ -38,15 +38,15 @@ label breakout_room_1:
             call b1_interrupt
             pass
 
-    show Brigette_1 at top_right_screen
+    show Brigette_one at top_right_screen
     player "Oh! Do you guys know each other?"
     Josh "Hmm… I dunno her."
-    show Brigette_2b at top_right_screen
+    show Brigette_twob at top_right_screen
     Brigette "Hey!"
     Josh "Joking, joking! I’ve known Bri for like a year, I basically pestered her until she talked to me."
-    show Brigette_3b at top_right_screen
+    show Brigette_threeb at top_right_screen
     Brigette "Yeah, you were annoying."
-    show Josh_2 at top_left_screen
+    show Josh_two at top_left_screen
     Josh "Yeah, yeah, I know. I’m just that annoying guy you know."
     Brigette "No you’re n-"
 
@@ -61,42 +61,42 @@ label breakout_room_1:
 
 label b1_howareyou:
     Josh "Yo dude!"
-    show Brigette_2 at top_right_screen
+    show Brigette_two at top_right_screen
     Brigette "..."
 
     Josh "I’m doing great, just a ‘lil bit behind on lectures but nothing a 2am sesh won’t fix."
-    show Brigette_1b at top_right_screen
+    show Brigette_oneb at top_right_screen
     Brigette "..."
     return
 
 label b1_interrupt:
     Josh "Yo dude!"
-    show Brigette_2 at top_right_screen
+    show Brigette_two at top_right_screen
     Brigette "Mind your own business!"
     Josh "Sorry we just went off on a tangent, nothing to worry about!"
     return
 
 label b1_continue:
-    hide Josh_2
-    show Josh_1 at top_left_screen
+    hide Josh_two
+    show Josh_one at top_left_screen
     Brigette "No you’re not! There’s… more annoying guys out there. "
     Josh "Ooh. Like who?"
-    show Brigette_1b at top_right_screen
+    show Brigette_oneb at top_right_screen
     Brigette "U-uh..."
     "{i}Brigette looks away to the side, blushing. Her voice softens."
 
-    show Brigette_3b at top_right_screen
+    show Brigette_threeb at top_right_screen
     Brigette "Y-you won’t know them."
 
-    show Josh_2 at top_left_screen
+    show Josh_two at top_left_screen
     Josh "Good. I was gonna fight them haha."
-    show Josh_1 at top_left_screen
+    show Josh_one at top_left_screen
     Josh "Hey [player_name], you still here?"
 
     menu:
         "Remain silent.":
             Josh "Welp, looks like they’re not there. Maybe connection problems."
-            show Brigette_1b at top_right_screen
+            show Brigette_oneb at top_right_screen
             Brigette "Yeah, I guess so."
             Josh "Oh well. Bri, guess it’s back to storytime."
             "{i}They continue talking for a minute."
@@ -104,11 +104,11 @@ label b1_continue:
             player "So..."
             pass
         "Yeah! I just didn’t want to interrupt you guys.":
-            show Brigette_2 at top_right_screen
+            show Brigette_two at top_right_screen
             Josh "Nah no worries! Just wanted to check if you were still there."
             Brigette "{size=-15}It was better when it was just me and Josh..{/size}"
             Josh "Wait did you say something Brigette?"
-            show Brigette_3b at top_right_screen
+            show Brigette_threeb at top_right_screen
             Brigette "Nothing at all!"
             pass
 
@@ -129,38 +129,40 @@ label b1_continue:
 
 label b1_teddybear:
     $ Brigette_mentioned_teddy = True
-    show Brigette_3 at top_right_screen
+    show Brigette_three at top_right_screen
     Brigette "..."
-    show Brigette_3b at top_right_screen
+    hide Brigette_three
+    show Brigette_threeb at top_right_screen
     Brigette "Thanks..."
-    show Josh_2 at top_left_screen
+    show Josh_two at top_left_screen
     Josh "I actually gave her that teddy bear!"
-    show Brigette_1b at top_right_screen
+    scene blank
+    show Brigette_oneb at top_right_screen
+    show Josh_one at top_left_screen
     Brigette "Yeah... It's really special to me."
-    show Josh_1 at top_left_screen
     call b1_tellus
     return
 
 label b1_howtheymet:
     Josh "Oh we actually met a year back!"
-    show Brigette_1b at top_right_screen
+    show Brigette_oneb at top_right_screen
     Brigette "Exactly 13 months and 27 days…"
     Josh "Woah..."
-    show Josh_2 at top_left_screen
+    show Josh_two at top_left_screen
     Josh "You have really good memory!"
     Brigette "Thanks..."
-    show Josh_1 at top_left_screen
+    show Josh_one at top_left_screen
     Josh "We were in the same group for a project team and well..."
     Josh "For some reason we lost communication with our other group members after the first meeting…"
-    show Brigette_3b at top_right_screen
+    show Brigette_threeb at top_right_screen
     Brigette "Yeah….. Not sure how that happened... Hahaha"
     Josh "They seemed like cool people though."
     Brigette "No, I don’t think so."
-    show Brigette_2 at top_right_screen
+    show Brigette_two at top_right_screen
     Brigette "That girl was raising some serious red flags."
     Brigette "“Did you see how she always sat way too close to you?”"
     Josh "Really? Damn I didn't notice..."
-    show Brigette_2b at top_right_screen
+    show Brigette_twob at top_right_screen
     Brigette "You never do..."
     Josh "?"
     Josh "..."
@@ -169,21 +171,21 @@ label b1_howtheymet:
 
 label b1_tellus:
     Josh "Oh well, what about you? Tell us a bit about yourself!"
-    show Brigette_1 at top_right_screen
+    show Brigette_one at top_right_screen
     menu:
         "I like music!":
             Josh "Oh nice!! Music is my passion!!"
-            show Brigette_2 at top_right_screen
+            show Brigette_two at top_right_screen
             Brigette "You’re not just saying that are you? Just to please him?"
             Josh "Hey! That’s not nice."
-            show Brigette_2b at top_right_screen
+            show Brigette_twob at top_right_screen
             Brigette "Hmph."
             call b1_end                           # END ABRUPT
             pass
         "I enjoy science!":
             Josh "Oh! Bri really enjoys science!"
             Josh "She’s super good at it too! Won multiple prizes!!"
-            show Brigette_1 at top_right_screen
+            show Brigette_one at top_right_screen
             Brigette "..."
             Josh "It's true!!"
             call b1_end                          #     EN D LOL
@@ -199,8 +201,8 @@ label b1_tellus:
 
 label b1_cutoff:
     player "Ah, look at the time! We should get back on task."
-    show Josh_1 at top_left_screen
-    show Brigette_2 at top_left_screen
+    show Josh_one at top_left_screen
+    show Brigette_two at top_left_screen
 
     Josh "Yeah man, all good."
     Brigette "... okay."
@@ -217,7 +219,7 @@ label b1_cutoff:
 
     $ Brigette_angry = True
 
-    show Josh_1 at middle
+    show Josh_one at middle
     Josh "And... I’m back!"
 
     menu:
