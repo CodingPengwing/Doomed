@@ -1,0 +1,30 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 106, in script call
+    call test_1
+  File "game/script.rpy", line 324, in script call
+    call outcome_Brigette_and_Alistair
+  File "game/side_scripts/outcomes.rpy", line 91, in script
+    centred "{b}{size=40}Score: 76{/size}{/b} \n
+Exception: Sayer 'centred' is not defined.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 106, in script call
+    call test_1
+  File "game/script.rpy", line 324, in script call
+    call outcome_Brigette_and_Alistair
+  File "game/side_scripts/outcomes.rpy", line 91, in script
+    centred "{b}{size=40}Score: 76{/size}{/b} \n
+  File "/Users/tonydang/opt/renpy-7.3.5-sdk/renpy/ast.py", line 678, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "/Users/tonydang/opt/renpy-7.3.5-sdk/renpy/ast.py", line 576, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who.encode("utf-8"))
+Exception: Sayer 'centred' is not defined.
+
+Darwin-19.6.0-x86_64-i386-64bit
+Ren'Py 7.3.5.606
+Doomed 1.0
+Sun Aug 23 22:21:50 2020

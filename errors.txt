@@ -1,0 +1,30 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/side_scripts/breakout_room_3.rpy", line 111: expected statement.
+    Show  Alistair_two                                                                                                                  
+                                                                                                                                        ^
+
+File "game/side_scripts/breakout_room_3.rpy", line 187: expected statement.
+    Show Alistair_two at top_right                                                                                        
+                      ^
+
+File "game/side_scripts/breakout_room_3.rpy", line 235: expected statement.
+    Show Jessica_two at top_left                                                                      
+                     ^
+
+File "game/side_scripts/breakout_room_3.rpy", line 247: expected statement.
+    Show Jessica_three at top_left                                                                                     
+                       ^
+
+File "game/side_scripts/breakout_room_3.rpy", line 254: expected statement.
+    Show Jessica_four at top_left                                                                                     
+                      ^
+
+File "game/side_scripts/breakout_room_3.rpy", line 269: expected statement.
+    Show Jessica_two at top_left                                                                        
+                     ^
+
+Ren'Py Version: Ren'Py 7.3.5.606
+Sun Aug 23 21:22:19 2020
