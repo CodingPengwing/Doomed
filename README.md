@@ -1,5 +1,5 @@
-# Unijam2020_Doomed
-Unijam 2020, University of Melbourne Hackathon. 3rd place winners.
+# Doomed
+Code participation in Unijam 2020, University of Melbourne Hackathon. **3rd place winners.** (Hooray)
 
 Team members:
 - Jennifer Xiang [@soopengi](https://github.com/soopengi)
