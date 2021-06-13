@@ -6,8 +6,6 @@ used to online learning. It mimics the student experience of trying to connect w
 through an online class.
 
 **Team members:**
-
-Developers:
 - Jennifer Xiang [@soopengi](https://github.com/soopengi): Developer/Storywriter
 - Stephen He [@stephenhe00](https://github.com/stephenhe00): Developer/Storywriter
 - Tony Dang [@CodingPengwing](https://github.com/CodingPengwing): Developer/Storywriter
