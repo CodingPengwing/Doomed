@@ -1,4 +1,7 @@
 # Doomed
+
+[Link to published game](https://cooked-pancakes.itch.io/doomed)
+
 3rd place winners in Unijam 2020!
 
 The purpose of this project is to reflect on the dynamic situation regarding COVID-19 all over the world in 2020, 
